@@ -379,10 +379,49 @@
     customTextarea.required = show;
     if (!show) customTextarea.value = '';
   });
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    formNote.textContent = 'Thanks, we got it. We\'ll be in touch shortly.';
-    formNote.style.color = 'var(--cyan)';
+
+    const submitBtn = document.getElementById('submitBtn');
+    const formData = new FormData(form);
+    const payload = {
+      name: formData.get('name') || '',
+      email: formData.get('email') || '',
+      phone: formData.get('phone') || '',
+      company: formData.get('company') || '',
+      website: formData.get('website') || '',
+      services: formData.getAll('services'),
+      message: formData.get('message') || ''
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'contact_form_submittded',
+      ...payload
+    });
+
+    submitBtn.disabled = true;
+    formNote.textContent = 'Sending...';
+    formNote.style.color = 'var(--text-faint)';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Request failed');
+      formNote.textContent = 'Thanks, we got it. We\'ll be in touch shortly.';
+      formNote.style.color = 'var(--cyan)';
+      form.reset();
+      customField.classList.remove('is-visible');
+      customTextarea.required = false;
+    } catch (err) {
+      formNote.textContent = 'Something went wrong, please email hello@unvrs.co directly.';
+      formNote.style.color = '#FF5C72';
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
 
   /* ============================= */
