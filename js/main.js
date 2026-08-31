@@ -246,7 +246,7 @@
       path: 'M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z'
     };
 
-    // Asymmetric, hand-placed cluster — deliberately not mirrored left/right
+    // Asymmetric, hand-placed cluster, deliberately not mirrored left/right
     const CLUSTER_LAYOUT = [
       { key: 'Phone', left: '24%', top: '9%', rot: -9, fd: '.2s', sz: 56 },
       { key: 'OpenAI', left: '5%', top: '31%', rot: 16, fd: '1.1s', sz: 50 },
@@ -381,7 +381,7 @@
   });
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    formNote.textContent = 'Thanks — we got it. We\'ll be in touch shortly.';
+    formNote.textContent = 'Thanks, we got it. We\'ll be in touch shortly.';
     formNote.style.color = 'var(--cyan)';
   });
 
@@ -411,8 +411,8 @@
     'testimonial-engine': {
       category: 'Reviews Automation', stack: 'n8n / OpenAI',
       title: 'Testimonial & Review Engine',
-      problem: 'Reviews only came in when a customer happened to think of it, so the review count barely moved and the website’s testimonials page hadn’t been touched in over a year — there was no system to ask for reviews, and no way to turn what did come back into usable marketing copy.',
-      built: 'An n8n workflow fires the moment a job is marked complete in the CRM, sending a timed SMS or email review request while the experience is still fresh. In parallel, a scheduled job scrapes new Google and Yelp reviews daily, and an OpenAI step reads each one, filters for 4- and 5-star reviews, and drafts a short, publish-ready pull-quote in the business’s own voice. Approved snippets post straight to the website and a social queue — no copy-paste required.',
+      problem: 'Reviews only came in when a customer happened to think of it, so the review count barely moved and the website’s testimonials page hadn’t been touched in over a year. There was no system to ask for reviews, and no way to turn what did come back into usable marketing copy.',
+      built: 'An n8n workflow fires the moment a job is marked complete in the CRM, sending a timed SMS or email review request while the experience is still fresh. In parallel, a scheduled job scrapes new Google and Yelp reviews daily, and an OpenAI step reads each one, filters for 4- and 5-star reviews, and drafts a short, publish-ready pull-quote in the business’s own voice. Approved snippets post straight to the website and a social queue. No copy-paste required.',
       result: 'Review volume roughly tripled in the first quarter, the average rating climbed as requests started going out right after a good experience instead of never, and the testimonials page now updates itself instead of sitting stale.',
       tags: ['n8n', 'OpenAI', 'Reviews'],
       accent: '#FFD24C',
@@ -427,7 +427,7 @@
     'lead-router': {
       category: 'Local Business Ops', stack: 'n8n / Twilio',
       title: 'Unified Lead Intake & Booking Router',
-      problem: 'An HVAC company was pulling in leads from four different places — phone calls, a website form, Google Local Services Ads, and Facebook — each landing in a different inbox or spreadsheet. Leads sat unanswered for hours, and some were never followed up at all.',
+      problem: 'An HVAC company was pulling in leads from four different places (phone calls, a website form, Google Local Services Ads, and Facebook), each landing in a different inbox or spreadsheet. Leads sat unanswered for hours, and some were never followed up at all.',
       built: 'A single n8n workflow ingests all four sources through webhooks, normalizes and dedupes each contact against the CRM, and enriches it with prior job history. Routine requests from known customers get booked directly onto the calendar; anything ambiguous or high-value triggers an instant SMS to the on-call tech with the customer’s full context already attached.',
       result: 'Average first-response time dropped from over 4 hours to under 3 minutes, and booked-job conversion from inbound leads rose noticeably within the first month.',
       tags: ['n8n', 'Twilio', 'CRM'],
@@ -443,8 +443,8 @@
     'movein-leadgen': {
       category: 'Lead Generation', stack: 'n8n / Public Records',
       title: 'New-Homeowner Lead Generator',
-      problem: 'A residential cleaning company’s best-converting customers were brand-new homeowners — a deep clean is one of the first things people book after a move. But every lead looked the same on a spreadsheet, and by the time anyone reviewed the weekly list and started calling, the best ones were already gone.',
-      built: 'A scheduled n8n workflow pulls fresh deed transfer records from the county’s public records feed every morning and filters to owner-occupied residential sales inside the service area. Each new homeowner is then scored against the business’s ideal-customer profile — home value, home size, distance from the shop, and how recently the sale closed — and ranked Hot, Warm, or Cold. The moment a lead scores Hot, it’s pushed immediately as a text straight to the owner’s phone with the homeowner’s name, address, and score attached — no dashboard to check, no weekly list to review.',
+      problem: 'A residential cleaning company’s best-converting customers were brand-new homeowners: a deep clean is one of the first things people book after a move. But every lead looked the same on a spreadsheet, and by the time anyone reviewed the weekly list and started calling, the best ones were already gone.',
+      built: 'A scheduled n8n workflow pulls fresh deed transfer records from the county’s public records feed every morning and filters to owner-occupied residential sales inside the service area. Each new homeowner is then scored against the business’s ideal-customer profile (home value, home size, distance from the shop, and how recently the sale closed) and ranked Hot, Warm, or Cold. The moment a lead scores Hot, it’s pushed immediately as a text straight to the owner’s phone with the homeowner’s name, address, and score attached. No dashboard to check, no weekly list to review.',
       result: 'New-homeowner leads now reach the business within minutes of the deed hitting public record instead of days later. It became one of their top three lead sources within two months, and the team just calls the number that texts them instead of hunting through a spreadsheet.',
       tags: ['n8n', 'Public Records', 'Lead Gen'],
       accent: '#C875FF',
@@ -474,8 +474,8 @@
           <div class="pm-alert-card accent">
             <div class="pm-alert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3a5 5 0 0 0-5 5v3.5c0 .9-.36 1.77-1 2.4L4.5 15.4c-.6.6-.18 1.6.67 1.6h13.66c.85 0 1.27-1 .67-1.6l-1.5-1.5a3.4 3.4 0 0 1-1-2.4V8a5 5 0 0 0-5-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 19a2.5 2.5 0 0 0 5 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
             <div class="pm-alert-body">
-              <div class="pm-alert-title">New Hot Lead — 414 Aiden Ct, Cary NC</div>
-              <p>Texted straight to the owner’s phone within minutes of the score clearing 80 — no dashboard, no daily digest, just a name and number to call.</p>
+              <div class="pm-alert-title">New Hot Lead: 414 Aiden Ct, Cary NC</div>
+              <p>Texted straight to the owner’s phone within minutes of the score clearing 80. No dashboard, no daily digest, just a name and number to call.</p>
             </div>
           </div>
         </div>
@@ -485,14 +485,14 @@
       category: 'Systems', stack: 'Shopify / Stripe',
       title: 'Fulfillment Sync Layer',
       problem: 'Orders, payments, and fulfillment lived in three disconnected systems, requiring manual re-entry that caused mismatched shipments and refund errors.',
-      built: 'A resilient sync layer connects the storefront, payment processor, and 3PL — with retry logic and conflict resolution so order state can never drift out of sync.',
+      built: 'A resilient sync layer connects the storefront, payment processor, and 3PL, with retry logic and conflict resolution so order state can never drift out of sync.',
       result: 'Double-entry was eliminated and fulfillment errors dropped to near zero.',
       tags: ['Shopify', 'Stripe', 'Systems']
     },
     'market-intel': {
       category: 'Research', stack: 'Claude / Web',
       title: 'Market Intel Pipeline',
-      problem: 'Competitive research was happening ad hoc, if at all — nobody had the bandwidth to consistently track competitor pricing, positioning, and moves.',
+      problem: 'Competitive research was happening ad hoc, if at all: nobody had the bandwidth to consistently track competitor pricing, positioning, and moves.',
       built: 'A scheduled research agent scans defined sources every morning, synthesizes findings with Claude, and delivers a structured brief before the team’s first meeting.',
       result: 'The team now starts every day with a current competitive snapshot instead of none at all.',
       tags: ['Claude', 'Automation', 'Research']
@@ -636,12 +636,12 @@
     receptionist: {
       category: 'Virtual Receptionist', stack: 'Live Call Recording',
       title: 'Hear It Handle a Real Call',
-      intro: 'This is an unscripted, real customer call — answered, understood, and handled end-to-end by the AI receptionist. No hold music, no missed call, no "let me transfer you."',
+      intro: 'This is an unscripted, real customer call: answered, understood, and handled end-to-end by the AI receptionist. No hold music, no missed call, no "let me transfer you."',
       summary: 'Connor called to book an ongoing weekly house cleaning service for his 3-bedroom, 2-bathroom home in Cary, North Carolina. He requested general cleaning on Wednesday mornings at 8 AM and provided his contact information. The team will follow up with pricing and scheduling details.',
       summaryFields: [
         ['Customer', 'Connor'],
         ['Service', 'Weekly House Cleaning'],
-        ['Property', '3 bed / 2 bath — Cary, NC'],
+        ['Property', '3 bed / 2 bath, Cary, NC'],
         ['Requested Time', 'Wednesdays, 8:00 AM'],
         ['Phone', '630-485-1419'],
         ['Email', 'test@gmail.com']
@@ -661,7 +661,7 @@
           <div class="pm-summary-card pm-fade-in" style="--d:.3s">
             <div class="pm-summary-header">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 6.5L12 13l8.5-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Auto-Generated Call Summary — Sent Immediately After Hangup</span>
+              <span>Auto-Generated Call Summary: Sent Immediately After Hangup</span>
             </div>
             <p class="pm-summary-text">${this.summary}</p>
             <div class="pm-summary-grid">
@@ -703,7 +703,7 @@
     autobot: {
       category: 'Auto-Bot', stack: 'Document Intake',
       title: 'Reading a Document and Pulling Out What Matters',
-      intro: 'Drop in a form, contract, or intake sheet — the Auto-Bot reads it and extracts exactly what your systems need, automatically.',
+      intro: 'Drop in a form, contract, or intake sheet: the Auto-Bot reads it and extracts exactly what your systems need, automatically.',
       fields: [
         ['Name', 'Connor Bolin'],
         ['Email', 'connor@example.com'],
@@ -754,7 +754,7 @@
           <div class="pm-chat">
             <div class="pm-chat-meta pm-fade-in" style="--d:1.1s">Form submitted at 2:41:03 PM</div>
             <div class="pm-chat-typing" style="--d:1.3s"><span></span><span></span><span></span></div>
-            <div class="pm-chat-msg out pm-fade-in" style="--d:2.3s">Hi Sarah — thanks for reaching out about a kitchen remodel quote! When’s a good time this week for a quick 10-minute call?</div>
+            <div class="pm-chat-msg out pm-fade-in" style="--d:2.3s">Hi Sarah, thanks for reaching out about a kitchen remodel quote! When’s a good time this week for a quick 10-minute call?</div>
             <div class="pm-chat-meta pm-fade-in" style="--d:2.6s">Sent 44 seconds after form submission</div>
           </div>
         `;
@@ -763,7 +763,7 @@
     reviews: {
       category: 'Review & Reputation Management', stack: 'Alert + Client Email',
       title: 'Catching a Bad Review Before It Ever Goes Public',
-      intro: 'The moment a low review comes in, the system catches it, raises an internal alert, and gets the business owner in the loop — before anyone else sees it.',
+      intro: 'The moment a low review comes in, the system catches it, raises an internal alert, and gets the business owner in the loop, before anyone else sees it.',
       render(){
         return `
           <div class="pm-meta"><span>${this.category}</span><span class="dot">·</span><span>${this.stack}</span></div>
@@ -789,7 +789,7 @@
               <div class="pm-alert-card">
                 <div class="pm-alert-icon">!</div>
                 <div class="pm-alert-body">
-                  <div class="pm-alert-title">New Review Detected — 2★</div>
+                  <div class="pm-alert-title">New Review Detected: 2★</div>
                   <p>Flagged internally within seconds, before it ever posted publicly.</p>
                 </div>
               </div>
@@ -803,7 +803,7 @@
               <span class="pm-flow-step-label">Email Sent to Client</span>
               <div class="pm-email-card">
                 <div class="pm-email-header"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 6.5L12 13l8.5-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> To: owner@riversidelandscaping.com</div>
-                <div class="pm-email-subject">Subject: A customer left 2 stars — here's what they said.</div>
+                <div class="pm-email-subject">Subject: A customer left 2 stars, here's what they said.</div>
                 <p class="pm-email-body"><span class="pm-typewriter" data-text="A review just came in below your usual rating. We've drafted a reply for you to review and send whenever you're ready." data-start="4.5"></span></p>
               </div>
             </div>
@@ -814,9 +814,9 @@
     invoicing: {
       category: 'Invoicing & Payment Follow-Up', stack: 'Invoice + Reminder Timeline',
       title: 'Invoices That Chase Themselves',
-      intro: 'Every invoice follows the same automatic path — no one has to remember to send a reminder.',
+      intro: 'Every invoice follows the same automatic path: no one has to remember to send a reminder.',
       invoice: { number: '#1042', client: 'Riverside Landscaping', amount: '$1,240.00', terms: 'Net 15' },
-      timeline: ['Day 0 — Invoice #1042 sent automatically', 'Day 7 — Friendly reminder sent', 'Day 14 — Second reminder sent', 'Day 15 — Paid in full'],
+      timeline: ['Day 0: Invoice #1042 sent automatically', 'Day 7: Friendly reminder sent', 'Day 14: Second reminder sent', 'Day 15: Paid in full'],
       render(){
         return `
           <div class="pm-meta"><span>${this.category}</span><span class="dot">·</span><span>${this.stack}</span></div>
