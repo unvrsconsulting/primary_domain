@@ -421,7 +421,7 @@
       form.style.display = 'none';
       formSuccess.classList.add('is-visible');
     } catch (err) {
-      formNote.textContent = 'Something went wrong, please email hello@universeaiconsulting.com directly.';
+      formNote.textContent = 'Something went wrong, please email connor@universeaiconsulting.com directly.';
       formNote.style.color = '#FF5C72';
     } finally {
       submitBtn.disabled = false;

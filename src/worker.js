@@ -3,14 +3,14 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === '/api/contact' && request.method === 'POST') {
-      return handleContact(request);
+      return handleContact(request, env);
     }
 
     return env.ASSETS.fetch(request);
   }
 };
 
-async function handleContact(request) {
+async function handleContact(request, env) {
   try {
     const data = await request.json();
     const { name, email, phone, company, website, services, message } = data;
@@ -41,7 +41,10 @@ async function handleContact(request) {
 
     const res = await fetch('https://api.mailchannels.net/tx/v1/send', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Api-Key': env.MAILCHANNELS_API_KEY
+      },
       body: JSON.stringify(payload)
     });
 
