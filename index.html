@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UNVRS — AI Automation for Small Businesses in Raleigh, NC</title>
+<meta name="description" content="UNVRS builds AI automation — virtual receptionists, AI agents, and workflow systems — for small businesses in Raleigh, NC and the Triangle. Stop missing calls and manual busywork." />
+<meta name="keywords" content="AI automation Raleigh, AI for small business, small business automation Raleigh NC, AI receptionist Raleigh, virtual receptionist for small business, AI agents for local business, Raleigh NC automation company, Triangle NC business automation" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://unvrs.co/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="UNVRS" />
+<meta property="og:title" content="UNVRS — AI Automation for Small Businesses in Raleigh, NC" />
+<meta property="og:description" content="AI automation — virtual receptionists, AI agents, and workflow systems — built for small businesses in Raleigh, NC and the Triangle." />
+<meta property="og:url" content="https://unvrs.co/" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="UNVRS — AI Automation for Small Businesses in Raleigh, NC" />
+<meta name="twitter:description" content="AI automation — virtual receptionists, AI agents, and workflow systems — built for small businesses in Raleigh, NC and the Triangle." />
+
+<!-- Local SEO geo tags -->
+<meta name="geo.region" content="US-NC" />
+<meta name="geo.placename" content="Raleigh" />
+<meta name="geo.position" content="35.7796;-78.6382" />
+<meta name="ICBM" content="35.7796, -78.6382" />
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/main.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "UNVRS",
+  "description": "AI automation studio building virtual receptionists, AI agents, and workflow automation systems for small businesses in Raleigh, NC and the surrounding Triangle area.",
+  "url": "https://unvrs.co/",
+  "email": "hello@unvrs.co",
+  "areaServed": [
+    { "@type": "City", "name": "Raleigh", "containedInPlace": { "@type": "State", "name": "North Carolina" } },
+    { "@type": "City", "name": "Cary", "containedInPlace": { "@type": "State", "name": "North Carolina" } },
+    { "@type": "City", "name": "Durham", "containedInPlace": { "@type": "State", "name": "North Carolina" } }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Raleigh",
+    "addressRegion": "NC",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 35.7796, "longitude": -78.6382 },
+  "priceRange": "$$",
+  "knowsAbout": ["AI automation", "Virtual receptionist services", "Business process automation", "AI agents", "Customer service automation"]
+}
+</script>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor-core" id="cursorCore"></div>
+
+<!-- Background layers -->
+<canvas id="bgCanvas"></canvas>
+<div class="noise-overlay"></div>
+<div class="grid-overlay"></div>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="3.2" fill="url(#navGrad)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#navGrad)" stroke-width="1.4" fill="none" opacity="0.85"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#navGrad)" stroke-width="1.4" fill="none" opacity="0.5" transform="rotate(60 20 20)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#navGrad)" stroke-width="1.4" fill="none" opacity="0.5" transform="rotate(120 20 20)"/>
+        <defs>
+          <linearGradient id="navGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8B7CFF"/>
+            <stop offset="0.5" stop-color="#C875FF"/>
+            <stop offset="1" stop-color="#4FE3FF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>UNVRS</span>
+      <span class="nav-tagline">AI Consulting</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#local-business" class="nav-link">Local Business</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#work" class="nav-link">Case Study</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#blog" class="nav-link">Blog</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-small btn-ghost magnetic">Let's Talk</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="#local-business" class="nav-mobile-link">Local Business</a>
+    <a href="#process" class="nav-mobile-link">Process</a>
+    <a href="#work" class="nav-mobile-link">Case Study</a>
+    <a href="#pricing" class="nav-mobile-link">Pricing</a>
+    <a href="#about" class="nav-mobile-link">About</a>
+    <a href="#contact" class="nav-mobile-link">Contact</a>
+    <a href="#blog" class="nav-mobile-link">Blog</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-icon-cluster" id="heroIconCluster" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="eyebrow reveal">
+        <span class="eyebrow-dot"></span>
+        AI Automation for Small Businesses in Raleigh
+      </div>
+
+      <h1 class="hero-title">
+        <span class="reveal-line"><span class="reveal-inner">Business operations,</span></span>
+        <span class="reveal-line"><span class="reveal-inner"><em class="grad-text">running on auto-pilot.</em></span></span>
+      </h1>
+
+      <p class="hero-sub reveal" data-delay="0.3">
+        UNVRS designs and builds AI-powered systems for small businesses in
+        Raleigh that eliminate busywork, connect your stack, and give your
+        business a second brain — one that works while you sleep.
+      </p>
+
+      <div class="hero-actions reveal" data-delay="0.4">
+        <a href="#contact" class="btn btn-primary magnetic">
+          <span>Start a Project</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#work" class="btn btn-outline magnetic">
+          <span>View Our Work</span>
+        </a>
+      </div>
+
+      <div class="hero-scroll reveal" data-delay="0.6">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee-section">
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+  </section>
+
+  <!-- THE COST OF A BROKEN SYSTEM -->
+  <section class="section broken-section" id="broken-system">
+    <div class="broken-glow" aria-hidden="true"></div>
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="tag broken-tag reveal">The Hidden Cost</span>
+        <h2 class="section-title reveal">Speed-to-lead is the single biggest lever for small businesses.</h2>
+        <p class="section-sub reveal">A missed call. A slow follow-up. A form nobody sees. These aren't small inconveniences — they're where local businesses quietly lose their next customer.</p>
+      </div>
+
+      <div class="break-visual reveal">
+        <div class="break-flow">
+          <div class="break-node">
+            <div class="break-node-icon ok">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="break-node-label">Customer Calls</span>
+          </div>
+
+          <span class="break-connector ok"></span>
+
+          <div class="break-node">
+            <div class="break-node-icon bad">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10.6 3.6L2.9 17.5c-.6 1 .1 2.3 1.3 2.3h15.6c1.2 0 1.9-1.3 1.3-2.3L13.4 3.6c-.6-1-2.1-1-2.8 0z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="break-node-label">No One Answers</span>
+            <div class="break-leak" aria-hidden="true">
+              <span class="leak-drop">$</span>
+              <span class="leak-drop">$</span>
+              <span class="leak-drop">$</span>
+            </div>
+          </div>
+
+          <span class="break-connector bad"></span>
+
+          <div class="break-node">
+            <div class="break-node-icon worse">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 21V10M20 21V10M2 10l2-6h16l2 6M2 10h20M9 21v-6h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="break-node-label">Calls Competition</span>
+          </div>
+
+          <span class="break-connector bad"></span>
+
+          <div class="break-node">
+            <div class="break-node-icon gone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <span class="break-node-label">Gone For Good</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="break-stats">
+        <div class="break-stat reveal">
+          <div class="stat-num break-stat-num" data-count="62" data-suffix="%">0</div>
+          <div class="break-stat-label">of small business calls go unanswered</div>
+        </div>
+        <div class="break-stat reveal" data-delay="0.1">
+          <div class="stat-num break-stat-num" data-count="85" data-suffix="%">0</div>
+          <div class="break-stat-label">of those callers never call back</div>
+        </div>
+        <div class="break-stat reveal" data-delay="0.2">
+          <div class="stat-num break-stat-num" data-count="126" data-prefix="$" data-suffix="K">0</div>
+          <div class="break-stat-label">average revenue lost per year to missed calls</div>
+        </div>
+      </div>
+
+      <p class="break-transition reveal">UNVRS eliminates this gap.</p>
+    </div>
+  </section>
+
+  <!-- LOCAL BUSINESS -->
+  <section class="section local-section" id="local-business">
+    <div class="local-glow" aria-hidden="true"></div>
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="tag reveal">For Raleigh Small Businesses</span>
+        <h2 class="section-title reveal">AI solutions that pay for themselves.</h2>
+        <p class="section-sub reveal">Missed calls, slow follow-ups, and manual busywork cost small businesses in Raleigh and across the Triangle real customers. These are the systems we build first — because they pay for themselves fastest.</p>
+      </div>
+
+      <div class="local-grid">
+        <article class="local-card reveal" data-example="receptionist" tabindex="0" role="button" aria-haspopup="dialog" style="--lc: #FFB020;">
+          <div class="local-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Virtual Receptionist</h3>
+          <p>Every call answered, every time — a 100% pickup rate so the phone ringing during a rush never costs you a customer again.</p>
+          <span class="local-card-cta">See it in action <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </article>
+
+        <article class="local-card reveal" data-delay="0.1" data-example="teammate" tabindex="0" role="button" aria-haspopup="dialog" style="--lc: #8B7CFF;">
+          <div class="local-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M4.5 20c1-3.5 4-5.5 7.5-5.5s6.5 2 7.5 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M15.5 8.3l1.3 1.3L19.5 6.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Virtual Teammate</h3>
+          <p>A dedicated AI that owns one role — data entry, scheduling, order processing — and works it exactly like a member of your team.</p>
+          <span class="local-card-cta">See it in action <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </article>
+
+        <article class="local-card reveal" data-delay="0.2" data-example="autobot" tabindex="0" role="button" aria-haspopup="dialog" style="--lc: #4FE3FF;">
+          <div class="local-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="7" width="14" height="11" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M12 7V4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="4" r="1.1" fill="currentColor"/><circle cx="9" cy="12.5" r="1.1" fill="currentColor"/><circle cx="15" cy="12.5" r="1.1" fill="currentColor"/><path d="M9 16h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Auto-Bot</h3>
+          <p>A bot trained specifically on your business — your processes, your edge cases, your tone — built to handle complex, multi-step tasks correctly.</p>
+          <span class="local-card-cta">See it in action <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </article>
+
+        <article class="local-card reveal" data-delay="0.3" data-example="leadfollowup" tabindex="0" role="button" aria-haspopup="dialog" style="--lc: #C875FF;">
+          <div class="local-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Lead Follow-Up Automation</h3>
+          <p>Speed wins deals — every new lead gets a response within minutes, then automatic follow-ups until they answer.</p>
+          <span class="local-card-cta">See it in action <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </article>
+
+        <article class="local-card reveal" data-delay="0.4" data-example="reviews" tabindex="0" role="button" aria-haspopup="dialog" style="--lc: #FFD24C;">
+          <div class="local-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7-5.4-4.7 7.1-.6L12 2.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Review &amp; Reputation Management</h3>
+          <p>Requests reviews at exactly the right moment and keeps a constant eye on what's being said about you online.</p>
+          <span class="local-card-cta">See it in action <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </article>
+
+        <article class="local-card reveal" data-delay="0.5" data-example="invoicing" tabindex="0" role="button" aria-haspopup="dialog" style="--lc: #34D399;">
+          <div class="local-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v10M15 9.3c0-1.3-1.3-2.3-3-2.3s-3 .9-3 2.1c0 2.8 6 1.4 6 4.2 0 1.2-1.3 2.1-3 2.1s-3-1-3-2.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Invoicing &amp; Payment Follow-Up</h3>
+          <p>Invoices go out on time, and late payments get chased automatically — no more awkward collection calls.</p>
+          <span class="local-card-cta">See it in action <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </article>
+      </div>
+
+      <div class="local-cta reveal">
+        <p class="local-cta-text">Ready to stop losing customers to a missed call or a slow follow-up?</p>
+        <a href="#contact" class="btn btn-primary magnetic">
+          <span>Start a Project</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" id="process">
+    <div class="section-inner process-inner">
+      <div class="process-main">
+        <div class="section-head">
+          <span class="tag reveal">Process</span>
+          <h2 class="section-title reveal">From audit to autopilot,<br class="lg-only"/> in four steps.</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line"><div class="timeline-line-fill" id="timelineFill"></div></div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-num">01</div>
+            <div class="timeline-content">
+              <h3>Discover</h3>
+              <p>We map your current operations — where time leaks, where errors creep in, and where automation pays off fastest.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-delay="0.1">
+            <div class="timeline-num">02</div>
+            <div class="timeline-content">
+              <h3>Design</h3>
+              <p>We architect the system: what gets automated, what stays human, and how everything connects to your existing stack.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-delay="0.2">
+            <div class="timeline-num">03</div>
+            <div class="timeline-content">
+              <h3>Build</h3>
+              <p>We ship in focused increments — real, working automations you can test against real operations, not slideware.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-delay="0.3">
+            <div class="timeline-num">04</div>
+            <div class="timeline-content">
+              <h3>Optimize</h3>
+              <p>We monitor, tune, and expand the system as your business changes — automation as an ongoing advantage, not a one-off project.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-visual reveal" data-delay="0.15">
+        <div class="orbit-card">
+          <div class="orbit-ring r1"></div>
+          <div class="orbit-ring r2"></div>
+          <div class="orbit-ring r3"></div>
+          <div class="orbit-core"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="tag reveal">Case Study</span>
+        <h2 class="section-title reveal">A closer look at one system<br class="lg-only"/> we built and shipped.</h2>
+      </div>
+
+      <div class="case-study reveal" style="--wc: #C875FF;">
+
+        <div class="case-head">
+          <div class="case-head-top">
+            <div class="case-meta">
+              <span>Lead Generation</span>
+              <span class="dot">·</span>
+              <span>n8n / Public Records</span>
+            </div>
+            <div class="case-tools">
+              <span class="case-tool generic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Public Records</span></span>
+              <span class="case-tool-connector"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="case-tool" style="--tc:#EA4B71"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"/></svg><span>n8n</span></span>
+              <span class="case-tool-connector"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="case-tool" style="--tc:#FFB020"><svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Phone</span></span>
+            </div>
+          </div>
+          <h3 class="case-title">New-Homeowner Lead Generator</h3>
+          <p class="case-desc">Pulls fresh home sale records daily, scores each new homeowner against the business's ideal-customer profile, and delivers qualified leads straight to the team's phone within minutes — before the competition even knows the house sold.</p>
+        </div>
+
+        <div class="case-stats reveal" data-delay="0.05">
+          <div class="case-stat">
+            <span class="case-stat-num">Top 3</span>
+            <span class="case-stat-label">lead source within 60 days</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num">&lt;5 min</span>
+            <span class="case-stat-label">record to delivered lead</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num">36%</span>
+            <span class="case-stat-label">hot leads become booked jobs</span>
+          </div>
+        </div>
+
+        <div class="case-columns">
+          <div class="case-col reveal" data-delay="0.1">
+            <div class="case-block-label">The Problem</div>
+            <p>A residential cleaning company's best-converting customers were brand-new homeowners — a deep clean is one of the first things people book after a move. But the volume from waiting for leads to come to the business was minimal.</p>
+          </div>
+          <div class="case-col reveal" data-delay="0.15">
+            <div class="case-block-label">What We Built</div>
+            <p>A scheduled n8n workflow pulls fresh deed records each day, filters to the service area, scores each homeowner against the ideal-customer profile, and texts the best qualified leads straight to the owner's phone within minutes.</p>
+          </div>
+        </div>
+
+        <div class="case-block reveal" data-delay="0.05">
+          <div class="case-block-label">Qualification Funnel — Weekly Average</div>
+          <div class="funnel-chart">
+            <div class="funnel-row">
+              <span class="funnel-name">Records Pulled</span>
+              <div class="funnel-track"><div class="funnel-bar" style="width:100%"><span class="funnel-val">49</span></div></div>
+            </div>
+            <div class="funnel-row">
+              <span class="funnel-name">Scored &amp; Qualified</span>
+              <div class="funnel-track"><div class="funnel-bar" style="width:78%"><span class="funnel-val">38</span></div></div>
+            </div>
+            <div class="funnel-row">
+              <span class="funnel-name">Hot Leads Delivered</span>
+              <div class="funnel-track"><div class="funnel-bar" style="width:22%"><span class="funnel-val">11</span></div></div>
+            </div>
+            <div class="funnel-row">
+              <span class="funnel-name">Booked Jobs</span>
+              <div class="funnel-track"><div class="funnel-bar" style="width:8%"><span class="funnel-val">4</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-block reveal" data-delay="0.05">
+          <div class="case-scoring-delivery">
+
+            <div class="case-scoring-col">
+              <div class="case-block-label">How Leads Are Scored</div>
+              <div class="pm-scan-results">
+                <div class="pm-scan-field"><span>Home Value</span><span>$410K</span></div>
+                <div class="pm-scan-field"><span>Home Size</span><span>4 BR / 3 BA</span></div>
+                <div class="pm-scan-field"><span>Distance to Service Area</span><span>3.2 mi</span></div>
+                <div class="pm-scan-field"><span>Days Since Closing</span><span>2 days</span></div>
+              </div>
+              <div class="score-weights">
+                <div class="score-weight-row"><span class="score-weight-name">Home Value</span><div class="score-weight-track"><div class="score-weight-bar" style="width:30%"></div></div><span class="score-weight-pct">30%</span></div>
+                <div class="score-weight-row"><span class="score-weight-name">Distance to Service Area</span><div class="score-weight-track"><div class="score-weight-bar" style="width:25%"></div></div><span class="score-weight-pct">25%</span></div>
+                <div class="score-weight-row"><span class="score-weight-name">Move-In Recency</span><div class="score-weight-track"><div class="score-weight-bar" style="width:25%"></div></div><span class="score-weight-pct">25%</span></div>
+                <div class="score-weight-row"><span class="score-weight-name">Home Size</span><div class="score-weight-track"><div class="score-weight-bar" style="width:20%"></div></div><span class="score-weight-pct">20%</span></div>
+              </div>
+              <div class="pm-lead-score">
+                <span class="pm-lead-score-num">92<span>/100</span></span>
+                <span class="pm-lead-score-tag">Hot Lead — example above</span>
+              </div>
+            </div>
+
+            <div class="case-phone-divider" aria-hidden="true">
+              <div class="case-phone-buzz">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M11 19h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+
+            <div class="case-delivery-col">
+              <div class="case-block-label">Delivered Instantly</div>
+              <div class="pm-alert-card accent">
+                <div class="pm-alert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3a5 5 0 0 0-5 5v3.5c0 .9-.36 1.77-1 2.4L4.5 15.4c-.6.6-.18 1.6.67 1.6h13.66c.85 0 1.27-1 .67-1.6l-1.5-1.5a3.4 3.4 0 0 1-1-2.4V8a5 5 0 0 0-5-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 19a2.5 2.5 0 0 0 5 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+                <div class="pm-alert-body">
+                  <div class="pm-alert-title">New Hot Lead — 414 Aiden Ct, Cary NC</div>
+                  <p>Texted straight to the owner's phone within minutes of the score clearing 80.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="case-block case-result reveal" data-delay="0.05">
+          <div class="case-block-label">The Result</div>
+          <p>New-homeowner leads now reach the business within minutes of the deed hitting public record instead of days later. It became one of their top three lead sources within two months.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section pricing-section" id="pricing">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="tag reveal">Pricing</span>
+        <h2 class="section-title reveal">Start with what solves the<br class="lg-only"/> biggest problem first.</h2>
+        <p class="section-sub reveal">Every plan can be live in under two weeks. Most small businesses in Raleigh start with the Virtual Receptionist alone — then grow the system as it proves itself.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card reveal">
+          <span class="pricing-badge">Start Here</span>
+          <h3>Starter</h3>
+          <div class="pricing-price">
+            <span class="pricing-amount">$199</span>
+            <span class="pricing-period">/mo</span>
+          </div>
+          <p class="pricing-desc">The fastest way to stop missing calls — one system, one job, done exceptionally well.</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Virtual Receptionist</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline magnetic pricing-btn">Get Started</a>
+        </article>
+
+        <article class="pricing-card recommended reveal" data-delay="0.1">
+          <span class="pricing-badge recommended-badge">Recommended</span>
+          <h3>Growth</h3>
+          <div class="pricing-price">
+            <span class="pricing-amount">$499</span>
+            <span class="pricing-period">/mo</span>
+          </div>
+          <p class="pricing-desc">For businesses ready to turn more leads into booked jobs — and protect their reputation while they do it.</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Virtual Receptionist</li>
+            <li><span class="check">✓</span> Lead Follow-Up Automation</li>
+            <li><span class="check">✓</span> Review &amp; Reputation Management</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary magnetic pricing-btn">Get Started</a>
+        </article>
+
+        <article class="pricing-card reveal" data-delay="0.2">
+          <span class="pricing-badge">Full Stack</span>
+          <h3>Complete</h3>
+          <div class="pricing-price">
+            <span class="pricing-amount">$799+</span>
+            <span class="pricing-period">/mo</span>
+          </div>
+          <p class="pricing-desc">The complete system — every automation working together as one connected operation.</p>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Virtual Receptionist</li>
+            <li><span class="check">✓</span> Virtual Teammate</li>
+            <li><span class="check">✓</span> Auto-Bot</li>
+            <li><span class="check">✓</span> Lead Follow-Up Automation</li>
+            <li><span class="check">✓</span> Review &amp; Reputation Management</li>
+            <li><span class="check">✓</span> Invoicing &amp; Payment Follow-Up</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline magnetic pricing-btn">Get Started</a>
+        </article>
+      </div>
+
+      <p class="pricing-note reveal">Final pricing depends on call volume and business needs — we'll confirm exact numbers on your first call.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section">
+    <div class="contact-glow"></div>
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="tag reveal">Get Started</span>
+        <h2 class="section-title reveal">It's time to put your<br class="lg-only"/> business on autopilot.</h2>
+      </div>
+
+      <div class="contact-layout">
+        <form class="contact-form reveal" id="contact">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(919) 555-0123" />
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Company name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="website">Website</label>
+            <input type="url" id="website" name="website" placeholder="yourcompany.com" />
+          </div>
+
+          <div class="form-group">
+            <label>Interested Services</label>
+            <div class="services-group" id="servicesGroup">
+              <label class="service-check">
+                <input type="checkbox" name="services" value="Virtual Receptionist" />
+                <span>Virtual Receptionist</span>
+              </label>
+              <label class="service-check">
+                <input type="checkbox" name="services" value="Virtual Teammates" />
+                <span>Virtual Teammates</span>
+              </label>
+              <label class="service-check">
+                <input type="checkbox" name="services" value="Auto-Bot" />
+                <span>Auto-Bot</span>
+              </label>
+              <label class="service-check">
+                <input type="checkbox" name="services" value="Lead Follow-Up Automation" />
+                <span>Lead Follow-Up Automation</span>
+              </label>
+              <label class="service-check">
+                <input type="checkbox" name="services" value="Review & Reputation Management" />
+                <span>Review &amp; Reputation Management</span>
+              </label>
+              <label class="service-check">
+                <input type="checkbox" name="services" value="Invoicing & Payment Follow-Up" />
+                <span>Invoicing &amp; Payment Follow-Up</span>
+              </label>
+              <label class="service-check">
+                <input type="checkbox" name="services" value="Custom Automations" id="customAutomationsCheck" />
+                <span>Custom Automations</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group conditional-field" id="customAutomationField">
+            <label for="message">What do you want to automate?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us what you'd like to automate..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary magnetic" id="submitBtn">
+            <span>Send Message</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+
+        <aside class="about-card reveal" data-delay="0.1" id="about">
+          <div class="about-photo">
+            <div class="about-photo-glow"></div>
+            <div class="about-photo-frame">
+              <img src="assets/connor-headshot.jpg" alt="Connor Bolin, founder of UNVRS, an AI automation studio in Raleigh, NC" />
+            </div>
+          </div>
+          <span class="tag">About</span>
+          <p class="about-blurb">Hi, I'm Connor. I build every UNVRS system myself — so when you work with us, you get direct, hands-on attention from someone who actually understands your operations.</p>
+          <div class="about-points">
+            <div class="about-point">
+              <span class="check">✓</span> Built by us, owned by you
+            </div>
+            <div class="about-point">
+              <span class="check">✓</span> Live in under two weeks
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section blog-section" id="blog">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="tag reveal">Blog</span>
+        <h2 class="section-title reveal">Notes on running an<br class="lg-only"/> automated business.</h2>
+        <p class="section-sub reveal">Practical write-ups on AI automation, lead response, and running a leaner operation — drawn from real client work in Raleigh. First posts coming soon.</p>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <span class="blog-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10.6 3.6L2.9 17.5c-.6 1 .1 2.3 1.3 2.3h15.6c1.2 0 1.9-1.3 1.3-2.3L13.4 3.6c-.6-1-2.1-1-2.8 0z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="blog-card-tag">Missed Revenue</span>
+          <h3>The Real Cost of a Missed Call</h3>
+          <p>62% of small business calls go unanswered — here's what that actually costs over a year, and the simplest fix.</p>
+          <span class="blog-card-status">Coming soon</span>
+        </article>
+
+        <article class="blog-card reveal" data-delay="0.1">
+          <span class="blog-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+          </span>
+          <span class="blog-card-tag">Getting Started</span>
+          <h3>Is Your Business Ready for Automation?</h3>
+          <p>A short checklist for knowing whether your operations have enough repetition to make automation worth it.</p>
+          <span class="blog-card-status">Coming soon</span>
+        </article>
+
+        <article class="blog-card reveal" data-delay="0.2">
+          <span class="blog-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="blog-card-tag">Lead Follow-Up</span>
+          <h3>5 Signs Your Follow-Up Is Losing You Money</h3>
+          <p>Slow replies quietly cost more than most owners realize. Here's how to tell if your leads are going cold.</p>
+          <span class="blog-card-status">Coming soon</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- PROJECT MODAL -->
+<div class="project-modal" id="projectModal" aria-hidden="true">
+  <div class="project-modal-backdrop" id="projectModalBackdrop"></div>
+  <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+    <button class="project-modal-close" id="projectModalClose" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3L13 13M13 3L3 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <div class="project-modal-body" id="projectModalBody"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="#top" class="nav-logo footer-logo">
+      <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="3.2" fill="url(#footGrad)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#footGrad)" stroke-width="1.4" fill="none" opacity="0.85"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#footGrad)" stroke-width="1.4" fill="none" opacity="0.5" transform="rotate(60 20 20)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#footGrad)" stroke-width="1.4" fill="none" opacity="0.5" transform="rotate(120 20 20)"/>
+        <defs>
+          <linearGradient id="footGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8B7CFF"/>
+            <stop offset="0.5" stop-color="#C875FF"/>
+            <stop offset="1" stop-color="#4FE3FF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>UNVRS</span>
+    </a>
+    <p class="footer-tag">AI automation for small businesses in Raleigh, NC.</p>
+    <div class="footer-links">
+      <a href="#local-business">Local Business</a>
+      <a href="#process">Process</a>
+      <a href="#work">Case Study</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#blog">Blog</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 UNVRS. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
