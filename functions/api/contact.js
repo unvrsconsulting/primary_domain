@@ -24,7 +24,7 @@ export async function onRequestPost(context) {
 
     const payload = {
       personalizations: [{ to: [{ email: 'connor@universeaiconsulting.com', name: 'Connor' }] }],
-      from: { email: 'noreply@unvrs.co', name: 'UNVRS Website' },
+      from: { email: 'noreply@universeaiconsulting.com', name: 'UNVRS Website' },
       reply_to: { email, name },
       subject: `New contact form submission from ${name}`,
       content: [{ type: 'text/plain', value: bodyText }]
