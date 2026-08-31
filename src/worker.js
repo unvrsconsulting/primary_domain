@@ -1,13 +1,22 @@
-export async function onRequestPost(context) {
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === '/api/contact' && request.method === 'POST') {
+      return handleContact(request);
+    }
+
+    return env.ASSETS.fetch(request);
+  }
+};
+
+async function handleContact(request) {
   try {
-    const data = await context.request.json();
+    const data = await request.json();
     const { name, email, phone, company, website, services, message } = data;
 
     if (!name || !email) {
-      return new Response(JSON.stringify({ ok: false, error: 'Missing required fields' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' }
-      });
+      return json({ ok: false, error: 'Missing required fields' }, 400);
     }
 
     const servicesList = Array.isArray(services) ? services.join(', ') : (services || 'None selected');
@@ -38,20 +47,18 @@ export async function onRequestPost(context) {
 
     if (!res.ok) {
       const errText = await res.text();
-      return new Response(JSON.stringify({ ok: false, error: errText }), {
-        status: 502,
-        headers: { 'Content-Type': 'application/json' }
-      });
+      return json({ ok: false, error: errText }, 502);
     }
 
-    return new Response(JSON.stringify({ ok: true }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    return json({ ok: true }, 200);
   } catch (err) {
-    return new Response(JSON.stringify({ ok: false, error: String(err) }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    return json({ ok: false, error: String(err) }, 500);
   }
+}
+
+function json(obj, status) {
+  return new Response(JSON.stringify(obj), {
+    status,
+    headers: { 'Content-Type': 'application/json' }
+  });
 }

@@ -1,0 +1,6 @@
+src/
+wrangler.jsonc
+.assetsignore
+.gitignore
+.git/
+functions/
