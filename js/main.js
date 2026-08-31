@@ -370,6 +370,7 @@
   /* ============================= */
   const form = document.getElementById('contact');
   const formNote = document.getElementById('formNote');
+  const formSuccess = document.getElementById('formSuccess');
   const customCheck = document.getElementById('customAutomationsCheck');
   const customField = document.getElementById('customAutomationField');
   const customTextarea = document.getElementById('message');
@@ -384,12 +385,14 @@
 
     const submitBtn = document.getElementById('submitBtn');
     const formData = new FormData(form);
+    let website = formData.get('website') || '';
+    if (website && !/^https?:\/\//i.test(website)) website = 'https://' + website;
     const payload = {
       name: formData.get('name') || '',
       email: formData.get('email') || '',
       phone: formData.get('phone') || '',
       company: formData.get('company') || '',
-      website: formData.get('website') || '',
+      website,
       services: formData.getAll('services'),
       message: formData.get('message') || ''
     };
@@ -411,11 +414,12 @@
         body: JSON.stringify(payload)
       });
       if (!res.ok) throw new Error('Request failed');
-      formNote.textContent = 'Thanks, we got it. We\'ll be in touch shortly.';
-      formNote.style.color = 'var(--cyan)';
       form.reset();
       customField.classList.remove('is-visible');
       customTextarea.required = false;
+      formNote.textContent = '';
+      form.style.display = 'none';
+      formSuccess.classList.add('is-visible');
     } catch (err) {
       formNote.textContent = 'Something went wrong, please email hello@unvrs.co directly.';
       formNote.style.color = '#FF5C72';
