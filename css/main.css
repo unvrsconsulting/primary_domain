@@ -144,8 +144,10 @@ button{ font-family: inherit; }
 /* Layout helpers                */
 /* ============================= */
 .section{ position: relative; z-index: 2; padding: 105px 0; }
+@media (max-width: 640px){ .section{ padding: 56px 0; } }
 .section-inner{ max-width: var(--container); margin: 0 auto; padding: 0 32px; }
 .section-head{ max-width: 720px; margin-bottom: 64px; }
+@media (max-width: 640px){ .section-head{ margin-bottom: 36px; } }
 .tag{
   display:inline-block;
   font-size: 13px;
@@ -268,8 +270,9 @@ button{ font-family: inherit; }
   padding-left: 9px;
   margin-left: 2px;
   border-left: 1px solid var(--border);
+  white-space: nowrap;
 }
-@media (max-width: 480px){ .nav-tagline{ display: none; } }
+@media (max-width: 360px){ .nav-tagline{ font-size: 9.5px; padding-left: 7px; } }
 
 .nav-links{ display: flex; align-items: center; gap: 36px; }
 .nav-link{
@@ -339,12 +342,16 @@ button{ font-family: inherit; }
   .nav-toggle{ display:flex; }
   .nav-mobile{ display:flex; }
 }
+@media (max-width: 480px){
+  .nav-actions .btn{ display: none; }
+}
 
 /* ============================= */
 /* Hero                           */
 /* ============================= */
 .hero{
   position: relative;
+  overflow: hidden;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -422,6 +429,7 @@ button{ font-family: inherit; }
   color: var(--text-dim);
   margin-bottom: 28px;
 }
+@media (max-width: 640px){ .eyebrow{ display: none; } }
 .eyebrow-dot{
   width:7px; height:7px;
   border-radius:50%;
@@ -974,7 +982,7 @@ button{ font-family: inherit; }
   letter-spacing: 0.04em;
 }
 .case-meta .dot{ opacity: .5; }
-.case-tools{ display: flex; align-items: center; gap: 10px; }
+.case-tools{ display: flex; align-items: center; flex-wrap: wrap; gap: 10px 8px; }
 .case-tool{
   display: inline-flex;
   align-items: center;
@@ -996,6 +1004,12 @@ button{ font-family: inherit; }
   width: 30px;
   height: 14px;
   flex-shrink: 0;
+}
+@media (max-width: 480px){
+  .case-tools{ flex-wrap: nowrap; gap: 4px; }
+  .case-tool{ padding: 4px 8px 4px 6px; font-size: 10px; gap: 4px; white-space: nowrap; }
+  .case-tool svg{ width: 11px; height: 11px; }
+  .case-tool-connector{ width: 16px; }
 }
 .case-tool-connector::before{
   content: '';
@@ -1908,6 +1922,15 @@ button{ font-family: inherit; }
   flex-direction: column;
   gap: 12px;
   flex: 1;
+}
+@media (max-width: 640px){
+  .pricing-card{ padding: 24px 22px; }
+  .pricing-badge{ margin-bottom: 12px; }
+  .pricing-card h3{ font-size: 18px; margin-bottom: 8px; }
+  .pricing-price{ margin-bottom: 10px; }
+  .pricing-desc{ margin-bottom: 16px; font-size: 13.5px; }
+  .pricing-features{ gap: 9px; margin-bottom: 18px; }
+  .pricing-features li{ font-size: 13px; }
 }
 .pricing-features li{ display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-dim); }
 
