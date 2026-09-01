@@ -53,6 +53,12 @@ async function handleContact(request, env) {
       return json({ ok: false, error: errText }, 502);
     }
 
+    const resBody = await res.json();
+    const failed = (resBody.results || []).find(r => r.status !== 'sent');
+    if (failed) {
+      return json({ ok: false, error: failed.reason || 'Send failed' }, 502);
+    }
+
     return json({ ok: true }, 200);
   } catch (err) {
     return json({ ok: false, error: String(err) }, 500);
