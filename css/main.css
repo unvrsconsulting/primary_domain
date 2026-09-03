@@ -419,6 +419,10 @@ button{ font-family: inherit; }
   text-align: center;
   margin: 0 auto;
 }
+@media (max-width: 640px){
+  .hero-inner{ z-index: 2; }
+  .hero-icon-cluster{ z-index: 0; }
+}
 
 .eyebrow{
   display: inline-flex;

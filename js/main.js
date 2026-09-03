@@ -250,15 +250,15 @@
 
     // Asymmetric, hand-placed cluster, deliberately not mirrored left/right
     const CLUSTER_LAYOUT = isNarrow ? [
-      { key: 'Phone', left: '3%', top: '22%', rot: -9, fd: '.2s', sz: 22 },
-      { key: 'OpenAI', left: '96%', top: '27%', rot: 16, fd: '1.1s', sz: 22 },
-      { key: 'Zapier', left: '4%', top: '37%', rot: -13, fd: '.5s', sz: 20 },
-      { key: 'n8n', left: '95%', top: '46%', rot: 9, fd: '1.4s', sz: 24 },
-      { key: 'Python', left: '3%', top: '56%', rot: -7, fd: '.8s', sz: 20 },
-      { key: 'Stripe', left: '96%', top: '66%', rot: 15, fd: '.3s', sz: 22 },
-      { key: 'Slack', left: '4%', top: '75%', rot: -11, fd: '1.6s', sz: 20 },
-      { key: 'Shopify', left: '95%', top: '84%', rot: 7, fd: '.65s', sz: 22 },
-      { key: 'Twilio', left: '3%', top: '94%', rot: -5, fd: '1.9s', sz: 20 }
+      { key: 'Phone', left: '18%', top: '8%', rot: -9, fd: '.2s', sz: 32 },
+      { key: 'OpenAI', left: '82%', top: '15%', rot: 16, fd: '1.1s', sz: 20 },
+      { key: 'Zapier', left: '55%', top: '5%', rot: -13, fd: '.5s', sz: 26 },
+      { key: 'n8n', left: '92%', top: '40%', rot: 9, fd: '1.4s', sz: 40 },
+      { key: 'Python', left: '8%', top: '48%', rot: -7, fd: '.8s', sz: 22 },
+      { key: 'Stripe', left: '38%', top: '62%', rot: 15, fd: '.3s', sz: 30 },
+      { key: 'Slack', left: '68%', top: '70%', rot: -11, fd: '1.6s', sz: 18 },
+      { key: 'Shopify', left: '15%', top: '85%', rot: 7, fd: '.65s', sz: 36 },
+      { key: 'Twilio', left: '88%', top: '90%', rot: -5, fd: '1.9s', sz: 24 }
     ] : [
       { key: 'Phone', left: '24%', top: '9%', rot: -9, fd: '.2s', sz: 56 },
       { key: 'OpenAI', left: '5%', top: '31%', rot: 16, fd: '1.1s', sz: 50 },
