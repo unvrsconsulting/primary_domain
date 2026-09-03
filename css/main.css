@@ -406,9 +406,6 @@ button{ font-family: inherit; }
   backdrop-filter: blur(6px);
 }
 .hero-icon-badge svg{ width: 44%; height: 44%; }
-@media (max-width: 900px){
-  .hero-icon-cluster{ display: none; }
-}
 
 .hero-inner{
   position: relative;
@@ -448,7 +445,7 @@ button{ font-family: inherit; }
   line-height: 1.08;
   margin-bottom: 26px;
 }
-@media (max-width: 640px){ .hero-title{ font-size: 34px; } }
+@media (max-width: 640px){ .hero-title{ font-size: 30px; } }
 .reveal-line{ display:block; overflow: hidden; }
 .reveal-inner{ display:block; transform: translateY(110%); transition: transform 1s var(--ease); }
 .hero.loaded .reveal-inner{ transform: translateY(0); }

@@ -240,14 +240,21 @@
   /* Hero icon cluster -> collapses into marquee on scroll */
   /* ============================= */
   const heroCluster = document.getElementById('heroIconCluster');
-  if (heroCluster && !isTouch){
+  if (heroCluster){
     const PHONE_ICON = {
       color: '#FFB020',
       path: 'M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z'
     };
 
+    const isNarrow = window.matchMedia('(max-width: 640px)').matches;
+
     // Asymmetric, hand-placed cluster, deliberately not mirrored left/right
-    const CLUSTER_LAYOUT = [
+    const CLUSTER_LAYOUT = isNarrow ? [
+      { key: 'Phone', left: '3%', top: '20%', rot: -9, fd: '.2s', sz: 22 },
+      { key: 'OpenAI', left: '96%', top: '30%', rot: 16, fd: '1.1s', sz: 24 },
+      { key: 'n8n', left: '4%', top: '55%', rot: 9, fd: '1.4s', sz: 22 },
+      { key: 'Stripe', left: '95%', top: '74%', rot: 15, fd: '.3s', sz: 24 }
+    ] : [
       { key: 'Phone', left: '24%', top: '9%', rot: -9, fd: '.2s', sz: 56 },
       { key: 'OpenAI', left: '5%', top: '31%', rot: 16, fd: '1.1s', sz: 50 },
       { key: 'Zapier', left: '71%', top: '8%', rot: -13, fd: '.5s', sz: 46 },
