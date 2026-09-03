@@ -446,6 +446,7 @@ button{ font-family: inherit; }
   line-height: 1.08;
   margin-bottom: 26px;
 }
+@media (max-width: 640px){ .hero-title{ font-size: 34px; } }
 .reveal-line{ display:block; overflow: hidden; }
 .reveal-inner{ display:block; transform: translateY(110%); transition: transform 1s var(--ease); }
 .hero.loaded .reveal-inner{ transform: translateY(0); }
@@ -780,7 +781,6 @@ button{ font-family: inherit; }
     grid-template-columns: none;
     overflow-x: auto;
     overflow-y: hidden;
-    touch-action: pan-x;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 14px;
@@ -789,9 +789,9 @@ button{ font-family: inherit; }
     scrollbar-width: none;
   }
   .local-grid::-webkit-scrollbar{ display: none; }
-  .local-card{ flex: 0 0 82%; scroll-snap-align: center; }
+  .local-card{ flex: 0 0 80%; scroll-snap-align: center; }
 }
-@media (max-width: 420px){ .local-card{ flex-basis: 88%; } }
+@media (max-width: 420px){ .local-card{ flex-basis: 80%; } }
 
 .local-card{
   position: relative;
@@ -1870,7 +1870,6 @@ button{ font-family: inherit; }
     grid-template-columns: none;
     overflow-x: auto;
     overflow-y: hidden;
-    touch-action: pan-x;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 14px;
@@ -1880,11 +1879,11 @@ button{ font-family: inherit; }
     max-width: none;
   }
   .pricing-grid::-webkit-scrollbar{ display: none; }
-  .pricing-card{ flex: 0 0 84%; scroll-snap-align: center; }
+  .pricing-card{ flex: 0 0 80%; scroll-snap-align: center; }
   .pricing-card.recommended{ transform: none; }
   .pricing-card.recommended:hover{ transform: translateY(-4px); }
 }
-@media (max-width: 420px){ .pricing-card{ flex-basis: 90%; } }
+@media (max-width: 420px){ .pricing-card{ flex-basis: 80%; } }
 
 .pricing-card{
   position: relative;
