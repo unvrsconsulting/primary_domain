@@ -339,11 +339,15 @@ button{ font-family: inherit; }
   .nav-mobile.open{ padding: 18px 16px 18px; }
 }
 .nav-mobile-link{
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 12px 0;
   font-size: 15px;
   color: var(--text-dim);
   border-bottom: 1px solid var(--border);
 }
+.nav-mobile-link svg{ flex-shrink: 0; color: var(--text-faint); }
 
 @media (max-width: 860px){
   .nav-links{ display:none; }
@@ -421,7 +425,7 @@ button{ font-family: inherit; }
 }
 @media (max-width: 640px){
   .hero-inner{ z-index: 2; }
-  .hero-icon-cluster{ z-index: 0; }
+  .hero-icon-cluster{ z-index: 0; opacity: 0.4; }
 }
 
 .eyebrow{

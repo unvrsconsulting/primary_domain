@@ -250,9 +250,9 @@
 
     // Asymmetric, hand-placed cluster, deliberately not mirrored left/right
     const CLUSTER_LAYOUT = isNarrow ? [
-      { key: 'Phone', left: '18%', top: '8%', rot: -9, fd: '.2s', sz: 32 },
-      { key: 'OpenAI', left: '82%', top: '15%', rot: 16, fd: '1.1s', sz: 20 },
-      { key: 'Zapier', left: '55%', top: '5%', rot: -13, fd: '.5s', sz: 26 },
+      { key: 'Phone', left: '18%', top: '24%', rot: -9, fd: '.2s', sz: 32 },
+      { key: 'OpenAI', left: '82%', top: '22%', rot: 16, fd: '1.1s', sz: 20 },
+      { key: 'Zapier', left: '55%', top: '30%', rot: -13, fd: '.5s', sz: 26 },
       { key: 'n8n', left: '92%', top: '40%', rot: 9, fd: '1.4s', sz: 40 },
       { key: 'Python', left: '8%', top: '48%', rot: -7, fd: '.8s', sz: 22 },
       { key: 'Stripe', left: '38%', top: '62%', rot: 15, fd: '.3s', sz: 30 },
