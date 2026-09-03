@@ -169,6 +169,8 @@ button{ font-family: inherit; }
 }
 .lg-only{ display:inline; }
 @media (max-width: 720px){ .lg-only{ display:none; } }
+.mobile-break{ display: none; }
+@media (max-width: 640px){ .mobile-break{ display: block; } }
 
 /* ============================= */
 /* Buttons                       */
