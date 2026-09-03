@@ -170,7 +170,6 @@ button{ font-family: inherit; }
 .lg-only{ display:inline; }
 @media (max-width: 720px){ .lg-only{ display:none; } }
 .mobile-break{ display: none; }
-@media (max-width: 640px){ .mobile-break{ display: block; } }
 
 /* ============================= */
 /* Buttons                       */
@@ -250,6 +249,7 @@ button{ font-family: inherit; }
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 640px){ .nav-inner{ padding: 0 16px; } }
 .nav-logo{
   display: flex;
   align-items: center;
@@ -329,9 +329,15 @@ button{ font-family: inherit; }
   padding: 0 32px;
   max-height: 0;
   overflow: hidden;
+  background: rgba(5,5,8,0.97);
+  backdrop-filter: blur(16px);
   transition: max-height .4s var(--ease-soft), padding .4s;
 }
-.nav-mobile.open{ max-height: 400px; padding: 18px 32px 8px; }
+.nav-mobile.open{ max-height: 400px; padding: 18px 32px 18px; border-bottom: 1px solid var(--border); }
+@media (max-width: 640px){
+  .nav-mobile{ padding: 0 16px; }
+  .nav-mobile.open{ padding: 18px 16px 18px; }
+}
 .nav-mobile-link{
   padding: 12px 0;
   font-size: 15px;
@@ -2163,73 +2169,12 @@ button{ font-family: inherit; }
 .form-note{ margin-top: 14px; font-size: 12.5px; color: var(--text-faint); min-height: 1px; }
 #submitBtn{ width: 100%; justify-content: center; margin-top: 4px; }
 
-.services-group{ display: flex; flex-wrap: wrap; gap: 10px; }
-.service-check{ position: relative; cursor: pointer; }
-.service-check input{
-  position: absolute; opacity: 0; width: 0; height: 0;
-}
-.service-check span{
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 9px 16px 9px 12px;
-  border-radius: 100px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.03);
-  color: var(--text-dim);
-  font-size: 13.5px;
-  line-height: 1;
-  user-select: none;
-  transition: border-color .25s, background .25s, color .25s;
-}
-.service-check span::before{
-  content: '✓';
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  width: 15px; height: 15px;
-  border-radius: 5px;
-  border: 1.5px solid var(--border-hover);
-  font-size: 10px;
-  color: transparent;
-  transition: background .25s, border-color .25s, color .25s;
-}
-.service-check:hover span{ border-color: var(--border-hover); }
-.service-check input:checked + span{
-  border-color: rgba(139,124,255,0.55);
-  background: rgba(139,124,255,0.12);
-  color: var(--text);
-}
-.service-check input:checked + span::before{
-  background: var(--grad);
-  border-color: transparent;
-  color: #08080d;
-}
-.service-check input:focus-visible + span{
-  outline: 2px solid var(--violet);
-  outline-offset: 2px;
-}
-
-.form-group.conditional-field{
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  margin-bottom: 0;
-  pointer-events: none;
-  transition: max-height .4s var(--ease-soft), opacity .3s ease, margin-bottom .4s var(--ease-soft);
-}
-.form-group.conditional-field.is-visible{
-  max-height: 220px;
-  opacity: 1;
-  margin-bottom: 18px;
-  pointer-events: auto;
-}
 @media (max-width: 640px){
   .contact-form{ padding: 22px 18px; }
   .form-row{ gap: 10px; }
   .form-group{ margin-bottom: 12px; }
   .form-group label{ font-size: 12px; margin-bottom: 5px; }
   .form-group input, .form-group textarea{ padding: 10px 12px; font-size: 14px; }
-  .services-group{ gap: 7px; }
-  .service-check span{ padding: 7px 13px 7px 10px; font-size: 12.5px; }
-  .form-group.conditional-field.is-visible{ margin-bottom: 12px; }
 }
 
 /* ============================= */

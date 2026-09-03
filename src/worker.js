@@ -13,13 +13,11 @@ export default {
 async function handleContact(request, env) {
   try {
     const data = await request.json();
-    const { name, email, phone, company, website, services, message } = data;
+    const { name, email, phone, company, website, message } = data;
 
     if (!name || !email) {
       return json({ ok: false, error: 'Missing required fields' }, 400);
     }
-
-    const servicesList = Array.isArray(services) ? services.join(', ') : (services || 'None selected');
 
     const bodyText = [
       `Name: ${name}`,
@@ -27,7 +25,6 @@ async function handleContact(request, env) {
       `Phone: ${phone || 'Not provided'}`,
       `Company: ${company || 'Not provided'}`,
       `Website: ${website || 'Not provided'}`,
-      `Interested Services: ${servicesList}`,
       `What they want to automate: ${message || 'Not provided'}`
     ].join('\n');
 

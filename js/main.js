@@ -250,10 +250,15 @@
 
     // Asymmetric, hand-placed cluster, deliberately not mirrored left/right
     const CLUSTER_LAYOUT = isNarrow ? [
-      { key: 'Phone', left: '3%', top: '20%', rot: -9, fd: '.2s', sz: 22 },
-      { key: 'OpenAI', left: '96%', top: '30%', rot: 16, fd: '1.1s', sz: 24 },
-      { key: 'n8n', left: '4%', top: '55%', rot: 9, fd: '1.4s', sz: 22 },
-      { key: 'Stripe', left: '95%', top: '74%', rot: 15, fd: '.3s', sz: 24 }
+      { key: 'Phone', left: '3%', top: '22%', rot: -9, fd: '.2s', sz: 22 },
+      { key: 'OpenAI', left: '96%', top: '27%', rot: 16, fd: '1.1s', sz: 22 },
+      { key: 'Zapier', left: '4%', top: '37%', rot: -13, fd: '.5s', sz: 20 },
+      { key: 'n8n', left: '95%', top: '46%', rot: 9, fd: '1.4s', sz: 24 },
+      { key: 'Python', left: '3%', top: '56%', rot: -7, fd: '.8s', sz: 20 },
+      { key: 'Stripe', left: '96%', top: '66%', rot: 15, fd: '.3s', sz: 22 },
+      { key: 'Slack', left: '4%', top: '75%', rot: -11, fd: '1.6s', sz: 20 },
+      { key: 'Shopify', left: '95%', top: '84%', rot: 7, fd: '.65s', sz: 22 },
+      { key: 'Twilio', left: '3%', top: '94%', rot: -5, fd: '1.9s', sz: 20 }
     ] : [
       { key: 'Phone', left: '24%', top: '9%', rot: -9, fd: '.2s', sz: 56 },
       { key: 'OpenAI', left: '5%', top: '31%', rot: 16, fd: '1.1s', sz: 50 },
@@ -378,15 +383,6 @@
   const form = document.getElementById('contact');
   const formNote = document.getElementById('formNote');
   const formSuccess = document.getElementById('formSuccess');
-  const customCheck = document.getElementById('customAutomationsCheck');
-  const customField = document.getElementById('customAutomationField');
-  const customTextarea = document.getElementById('message');
-  customCheck.addEventListener('change', () => {
-    const show = customCheck.checked;
-    customField.classList.toggle('is-visible', show);
-    customTextarea.required = show;
-    if (!show) customTextarea.value = '';
-  });
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -400,7 +396,6 @@
       phone: formData.get('phone') || '',
       company: formData.get('company') || '',
       website,
-      services: formData.getAll('services'),
       message: formData.get('message') || ''
     };
 
@@ -422,8 +417,6 @@
       });
       if (!res.ok) throw new Error('Request failed');
       form.reset();
-      customField.classList.remove('is-visible');
-      customTextarea.required = false;
       formNote.textContent = '';
       form.style.display = 'none';
       formSuccess.classList.add('is-visible');
