@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Visibility Report</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- ============================= NAV ============================= -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <img class="logo-img" alt="logo" />
+        <span id="nav-business">Business Name</span>
+        <span class="nav-pill">Visibility Report</span>
+      </div>
+      <a class="btn btn-primary btn-sm js-book-cta" href="#">Book a Call</a>
+    </div>
+  </nav>
+
+  <div id="unclaimed-banner" class="unclaimed-banner">
+    ⚠️ This Google Business Profile is unclaimed — anyone could be managing it right now.
+  </div>
+
+  <!-- ============================= HERO ============================= -->
+  <header class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrapper">
+      <h1 id="hero-headline">Here's where <span class="grad-text" id="hero-business-name">—</span> stands right now</h1>
+
+      <div class="overview-card">
+        <div class="overview-tile">
+          <div class="overview-icon" style="--oc: var(--violet);">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <div class="overview-label">Local Position</div>
+          <div class="overview-value" id="ov-position">#—</div>
+          <div class="overview-sub" id="ov-position-sub"></div>
+        </div>
+        <div class="overview-tile">
+          <div class="overview-icon" style="--oc: var(--magenta);">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16v10.5H9l-4 4V5.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="overview-label">Reviews</div>
+          <div class="overview-value" id="ov-reviews">0</div>
+          <div class="overview-sub" id="ov-reviews-sub"></div>
+        </div>
+        <div class="overview-tile">
+          <div class="overview-icon" style="--oc: #ca8a04;">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7-5.4-4.7 7.1-.6L12 2.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="overview-label">Rating</div>
+          <div class="overview-value" id="ov-rating">0.0</div>
+          <div class="overview-sub" id="ov-rating-sub"></div>
+        </div>
+        <div class="overview-tile">
+          <div class="overview-icon" style="--oc: var(--cyan);">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.4 8.4-7 9.9-3.6-1.5-7-4.9-7-9.9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="overview-label">Profile</div>
+          <div class="overview-value" id="ov-profile">—</div>
+          <div class="overview-sub">Google Business listing</div>
+        </div>
+      </div>
+
+      <div class="target-heading">This is where you should be</div>
+      <svg class="target-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v14M12 18l-5-5M12 18l5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+      <div class="overview-card overview-card--target">
+        <div class="overview-tile">
+          <div class="overview-icon" style="--oc: var(--violet);">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <div class="overview-label">Local Position</div>
+          <div class="overview-value" id="tg-position">#—</div>
+          <div class="overview-sub" id="tg-position-sub"></div>
+        </div>
+        <div class="overview-tile">
+          <div class="overview-icon" style="--oc: var(--magenta);">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16v10.5H9l-4 4V5.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="overview-label">Reviews</div>
+          <div class="overview-value" id="tg-reviews">0</div>
+          <div class="overview-sub" id="tg-reviews-sub"></div>
+        </div>
+        <div class="overview-tile">
+          <div class="overview-icon" style="--oc: #ca8a04;">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7-5.4-4.7 7.1-.6L12 2.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="overview-label">Rating</div>
+          <div class="overview-value" id="tg-rating">0.0</div>
+          <div class="overview-sub" id="tg-rating-sub"></div>
+        </div>
+        <div class="overview-tile">
+          <div class="overview-icon" style="--oc: var(--cyan);">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.4 8.4-7 9.9-3.6-1.5-7-4.9-7-9.9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="overview-label">Profile</div>
+          <div class="overview-value" id="tg-profile">—</div>
+          <div class="overview-sub" id="tg-profile-sub"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================= POSITION ============================= -->
+  <section class="section" id="data-position">
+    <div class="wrapper">
+      <div class="section-head">
+        <span class="tag">Your Position</span>
+        <h2>You're <span id="position-headline-num">#—</span> for "<span id="position-search-term"></span>"</h2>
+      </div>
+
+      <div class="card position-card">
+        <div id="leaderboard"></div>
+      </div>
+
+      <div class="cta-highlight" id="highlight-position" style="--hl: #b34fd9;">
+        <div class="cta-highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="cta-highlight-body">
+          <div class="cta-highlight-label">Why this matters</div>
+          <div class="cta-highlight-text" id="position-highlight-text"></div>
+        </div>
+        <a class="btn btn-primary btn-sm" href="#service-leadfollowup">See Lead Follow-Up Automation →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= REVIEWS & RATING ============================= -->
+  <section class="section section-alt" id="data-reviews">
+    <div class="wrapper">
+      <div class="section-head">
+        <span class="tag">Reviews &amp; Rating</span>
+        <h2>Your reviews vs top-rated businesses near you</h2>
+      </div>
+
+      <div class="stacked-charts">
+        <div class="card chart-card">
+          <div class="chart-stat-head">
+            <div>
+              <div class="chart-stat-label">
+                <span class="chart-card-icon" style="--cc: var(--magenta);"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16v10.5H9l-4 4V5.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+                Review Count
+              </div>
+              <div class="chart-stat-value" id="reviews-stat-value">0</div>
+            </div>
+            <div class="chart-stat-badge" id="reviews-stat-badge" style="--cc: var(--magenta);"></div>
+          </div>
+          <div class="chart-wrap"><canvas id="reviewsChart"></canvas></div>
+        </div>
+        <div class="card chart-card">
+          <div class="chart-stat-head">
+            <div>
+              <div class="chart-stat-label">
+                <span class="chart-card-icon" style="--cc: #ca8a04;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7-5.4-4.7 7.1-.6L12 2.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+                Rating
+              </div>
+              <div class="chart-stat-value" id="rating-stat-value">0.0</div>
+            </div>
+            <div class="chart-stat-badge" id="rating-stat-badge" style="--cc: #ca8a04;"></div>
+          </div>
+          <div class="chart-wrap"><canvas id="ratingChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="cta-highlight" id="highlight-reviews" style="--hl: #ca8a04;">
+        <div class="cta-highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7-5.4-4.7 7.1-.6L12 2.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="cta-highlight-body">
+          <div class="cta-highlight-label">Why this matters</div>
+          <div class="cta-highlight-text" id="reviews-highlight-text"></div>
+        </div>
+        <a class="btn btn-primary btn-sm" href="#service-reviews">See Review Management →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= PROFILE ============================= -->
+  <section class="section" id="data-profile">
+    <div class="wrapper">
+      <div class="section-head">
+        <span class="tag">Profile Signals</span>
+        <h2>Your Google Business Profile completeness report</h2>
+      </div>
+
+      <div class="profile-grid">
+        <div class="card profile-card">
+          <div class="profile-status-row">
+            <span class="status-pill" id="profile-claimed-pill">—</span>
+            <span id="profile-claimed-note" style="font-size:13px; color:var(--text-faint);"></span>
+          </div>
+          <div class="profile-fact"><span>Business name</span><span id="profile-name"></span></div>
+          <div class="profile-fact"><span>Primary category</span><span id="profile-category"></span></div>
+          <div class="profile-fact"><span>Address</span><span id="profile-address"></span></div>
+          <div class="profile-fact"><span>Phone</span><span id="profile-phone"></span></div>
+        </div>
+
+        <div class="card profile-card">
+          <div class="cat-compare-title">Website presence vs. top-rated businesses near you</div>
+          <div id="cat-bars"></div>
+          <p id="cat-bars-note" style="font-size:12.5px; color:var(--text-faint); margin-top:6px; display:none;">A profile with no website link sends every interested click to a dead end instead of your business.</p>
+        </div>
+      </div>
+
+      <div class="cta-highlight" id="highlight-profile" style="--hl: #6d54e0;">
+        <div class="cta-highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 20c1-3.5 4-5.5 7.5-5.5s6.5 2 7.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M15.5 8.3l1.3 1.3L19.5 6.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="cta-highlight-body">
+          <div class="cta-highlight-label">Why this matters</div>
+          <div class="cta-highlight-text" id="profile-highlight-text"></div>
+        </div>
+        <a class="btn btn-primary btn-sm" href="#service-teammate">See Virtual Teammate →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= AI AUTOMATION ============================= -->
+  <section class="section section-alt" id="ai-automation">
+    <div class="wrapper">
+      <div class="section-head">
+        <span class="tag">AI Automation</span>
+        <h2>AI solutions that pay for themselves</h2>
+        <p>Missed calls, slow follow-ups, and manual busywork cost businesses like yours real customers. These are the systems that close the gaps above — fastest wins first.</p>
+      </div>
+      <div class="services-grid" id="services"></div>
+    </div>
+  </section>
+
+  <!-- ============================= CTA BAND ============================= -->
+  <section class="cta-band" id="book-a-call">
+    <h2 id="cta-heading">Ready to fix this?</h2>
+    <p id="cta-subheading"></p>
+    <div class="cta-ctas">
+      <a class="btn btn-primary" id="cta-button" href="#">Book My Free Growth Audit</a>
+      <div class="cta-secondary">
+        or call now: <a class="js-call-cta" href="#"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Report prepared by <span id="footer-agency"></span> · Ranking &amp; review data via Google Maps SERP API
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="data.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

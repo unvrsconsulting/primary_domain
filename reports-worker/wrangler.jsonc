@@ -1,0 +1,10 @@
+{
+  "name": "unvrs-reports",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "../reports",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  }
+}

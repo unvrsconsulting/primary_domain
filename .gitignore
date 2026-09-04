@@ -1,3 +1,20 @@
 .DS_Store
 node_modules/
 .wrangler/
+
+# Scraped target/contact data — not for the public repo.
+leadgen/data/targets*.json
+leadgen/data/published.json
+leadgen/data/emails/
+leadgen/.env.local
+
+# Generated outreach pages contain real business names, phone numbers,
+# addresses, and competitor comparisons — this repo is public, so these
+# never get committed. Deployed straight to Cloudflare via `wrangler
+# deploy` in reports-worker/, no git involved. reports/css, reports/js
+# and robots.txt are the shared template assets (no business data),
+# safe to keep tracked — re-include them explicitly since they'd
+# otherwise match the directory glob above.
+reports/*/
+!reports/css/
+!reports/js/

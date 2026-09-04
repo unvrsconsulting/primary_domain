@@ -3,4 +3,8 @@ wrangler.jsonc
 .assetsignore
 .gitignore
 .git/
+.wrangler/
 functions/
+leadgen/
+reports/
+reports-worker/
