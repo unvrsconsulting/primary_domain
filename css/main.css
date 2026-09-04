@@ -2385,7 +2385,9 @@ button{ font-family: inherit; }
 /* Individual post */
 .post-hero{ position: relative; z-index:2; padding: 150px 0 0; }
 .post-hero-inner{ max-width: 780px; margin: 0 auto; padding: 0 32px; }
-.post-hero-inner.wide{ max-width: var(--container); }
+.post-hero-inner.wide{ max-width: var(--container); padding-left: 56px; padding-right: 56px; }
+@media (max-width: 860px){ .post-hero-inner.wide{ padding-left: 32px; padding-right: 32px; } }
+@media (max-width: 640px){ .post-hero-inner.wide{ padding-left: 20px; padding-right: 20px; } }
 .post-hero-head{ display: flex; align-items: center; gap: 18px; }
 .post-hero-thumb{ width: 64px; height: 64px; border-radius: 16px; object-fit: cover; flex-shrink: 0; border: 1px solid var(--border); }
 @media (max-width: 640px){ .post-hero-thumb{ width: 52px; height: 52px; border-radius: 13px; } }
@@ -2406,8 +2408,10 @@ button{ font-family: inherit; }
 .post-banner-art svg, .post-banner-art img{ width: 100%; height: 100%; display: block; object-fit: cover; }
 
 .post-body{ max-width: 780px; margin: 0 auto; padding: 0 32px 40px; position: relative; z-index: 2; }
-.post-body.wide{ max-width: var(--container); }
+.post-body.wide{ max-width: var(--container); padding-left: 56px; padding-right: 56px; }
 .post-body.wide > p, .post-body.wide > ul, .post-body.wide > ol, .post-body.wide > blockquote{ max-width: 780px; }
+@media (max-width: 860px){ .post-body.wide{ padding-left: 32px; padding-right: 32px; } }
+@media (max-width: 640px){ .post-body.wide{ padding-left: 20px; padding-right: 20px; } }
 .post-body h2{ font-size: 25px; line-height: 1.35; margin: 46px 0 16px; }
 .post-body h3{ font-size: 19px; line-height: 1.4; margin: 34px 0 12px; }
 .post-body p{ font-size: 16.5px; line-height: 1.8; color: var(--text-dim); margin-bottom: 20px; }
