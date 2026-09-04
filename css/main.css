@@ -145,6 +145,7 @@ button{ font-family: inherit; }
 /* ============================= */
 .section{ position: relative; z-index: 2; padding: 105px 0; }
 @media (max-width: 640px){ .section{ padding: 56px 0; } }
+@media (min-width: 641px){ .blog-section{ padding-top: 40px; } }
 .section-inner{ max-width: var(--container); margin: 0 auto; padding: 0 32px; }
 .section-head{ max-width: 720px; margin-bottom: 64px; }
 @media (max-width: 640px){ .section-head{ margin-bottom: 36px; } }
