@@ -6,6 +6,76 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://universeaiconsulting.com/services/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/services/ai-virtual-receptionist/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/services/lead-follow-up-automation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/services/ai-virtual-teammate/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/services/ai-chatbot-automation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/services/review-reputation-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/services/invoicing-payment-automation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/home-cleaning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/hvac-plumbing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/dental-practices/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/real-estate/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/salons-med-spas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/restaurants/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://universeaiconsulting.com/blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>

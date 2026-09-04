@@ -156,6 +156,14 @@
     navMobile.classList.remove('open');
   }));
 
+  navMobile.querySelectorAll('.nav-mobile-group-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.nav-mobile-group');
+      const isOpen = group.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
   /* ============================= */
   /* Scroll reveal                 */
   /* ============================= */

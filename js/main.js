@@ -153,6 +153,14 @@
     navMobile.classList.remove('open');
   }));
 
+  navMobile.querySelectorAll('.nav-mobile-group-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.nav-mobile-group');
+      const isOpen = group.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
   /* ============================= */
   /* Hero load-in                  */
   /* ============================= */
@@ -675,6 +683,7 @@
   const EXAMPLES = {
     receptionist: {
       category: 'Virtual Receptionist', stack: 'Live Call Recording',
+      learnMoreHref: '/services/ai-virtual-receptionist/',
       title: 'Hear It Handle a Real Call',
       intro: 'This is an unscripted, real customer call: answered, understood, and handled end-to-end by the AI receptionist. No hold music, no missed call, no "let me transfer you."',
       summary: 'Connor called to book an ongoing weekly house cleaning service for his 3-bedroom, 2-bathroom home in Cary, North Carolina. He requested general cleaning on Wednesday mornings at 8 AM and provided his contact information. The team will follow up with pricing and scheduling details.',
@@ -714,6 +723,7 @@
     },
     teammate: {
       category: 'Virtual Teammate', stack: 'Daily Activity Log',
+      learnMoreHref: '/services/ai-virtual-teammate/',
       title: 'A Day in the Life of a Virtual Teammate',
       intro: 'One role, fully owned. Watch a real slice of what a Virtual Teammate checks off in a single day without anyone lifting a finger.',
       log: [
@@ -742,6 +752,7 @@
     },
     autobot: {
       category: 'Auto-Bot', stack: 'Document Intake',
+      learnMoreHref: '/services/ai-chatbot-automation/',
       title: 'Reading a Document and Pulling Out What Matters',
       intro: 'Drop in a form, contract, or intake sheet: the Auto-Bot reads it and extracts exactly what your systems need, automatically.',
       fields: [
@@ -775,6 +786,7 @@
     },
     leadfollowup: {
       category: 'Lead Follow-Up Automation', stack: 'Form + SMS Thread',
+      learnMoreHref: '/services/lead-follow-up-automation/',
       title: 'From Form Submission to First Reply in Under a Minute',
       intro: 'Speed is the whole game. Watch a new lead go from form submission to a personal reply, automatically.',
       form: [
@@ -802,6 +814,7 @@
     },
     reviews: {
       category: 'Review & Reputation Management', stack: 'Alert + Client Email',
+      learnMoreHref: '/services/review-reputation-management/',
       title: 'Catching a Bad Review Before It Ever Goes Public',
       intro: 'The moment a low review comes in, the system catches it, raises an internal alert, and gets the business owner in the loop, before anyone else sees it.',
       render(){
@@ -853,6 +866,7 @@
     },
     invoicing: {
       category: 'Invoicing & Payment Follow-Up', stack: 'Invoice + Reminder Timeline',
+      learnMoreHref: '/services/invoicing-payment-automation/',
       title: 'Invoices That Chase Themselves',
       intro: 'Every invoice follows the same automatic path: no one has to remember to send a reminder.',
       invoice: { number: '#1042', client: 'Riverside Landscaping', amount: '$1,240.00', terms: 'Net 15' },
@@ -880,7 +894,10 @@
   function openExample(key){
     const ex = EXAMPLES[key];
     if (!ex) return;
-    openModal(ex.render());
+    const learnMore = ex.learnMoreHref
+      ? `<div class="pm-learn-more"><a href="${ex.learnMoreHref}" class="btn btn-outline btn-small">Learn more about ${ex.category}</a></div>`
+      : '';
+    openModal(ex.render() + learnMore);
   }
 
   document.querySelectorAll('.local-card[data-example]').forEach(card => {
