@@ -141,58 +141,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="post-banner reveal">
     <div class="post-banner-art">
-      <svg viewBox="0 0 1400 620" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract broom-and-sparkle illustration representing home cleaning automation, rendered in the UNVRS violet-to-cyan gradient">
-        <defs>
-          <linearGradient id="gradCleanHero" x1="0" y1="0" x2="1400" y2="620" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#8B7CFF"/><stop offset="0.55" stop-color="#C875FF"/><stop offset="1" stop-color="#4FE3FF"/>
-          </linearGradient>
-          <radialGradient id="glowCleanHero" cx="0.72" cy="0.28" r="0.6"><stop offset="0" stop-color="#C875FF" stop-opacity="0.28"/><stop offset="1" stop-color="#C875FF" stop-opacity="0"/></radialGradient>
-        </defs>
-        <rect width="1400" height="620" fill="#0a0a12"/>
-        <rect width="1400" height="620" fill="url(#glowCleanHero)"/>
-        <circle cx="330" cy="480" r="270" fill="#8B7CFF" opacity="0.07"/>
-        <circle cx="1130" cy="150" r="230" fill="#4FE3FF" opacity="0.07"/>
-        <g stroke="url(#gradCleanHero)" stroke-width="1.4" fill="none" opacity="0.45">
-          <ellipse cx="700" cy="310" rx="330" ry="130"/>
-          <ellipse cx="700" cy="310" rx="330" ry="130" transform="rotate(58 700 310)"/>
-          <ellipse cx="700" cy="310" rx="330" ry="130" transform="rotate(116 700 310)"/>
-        </g>
-        <g transform="translate(700,310) scale(3.2)" stroke="url(#gradCleanHero)" stroke-width="6" stroke-linecap="round" fill="none">
-          <path d="M-34 46 L-10 -40"/>
-          <path d="M-10 -40 L34 -52"/>
-          <path d="M-46 46 L-22 46"/>
-        </g>
-        <circle cx="734" cy="72" r="9" fill="url(#gradCleanHero)"/>
-        <g fill="url(#gradCleanHero)" opacity="0.85">
-          <circle cx="900" cy="220" r="5"/><circle cx="945" cy="260" r="3.4"/><circle cx="870" cy="170" r="2.6"/>
-          <circle cx="480" cy="450" r="4"/><circle cx="440" cy="410" r="2.6"/>
-        </g>
-      </svg>
+      <img src="/assets/blog/cleaning.jpg" alt="Flat illustration of a spray bottle and mop crossed in front of a house, with sparkle accents" width="1024" height="1024" loading="eager" />
     </div>
   </div>
 
   <article class="post-body">
     <p>Run a house cleaning or maid service in Raleigh, Cary, or Durham and your day is full of small, repetitive interruptions: "Can I get a quote for a 3-bedroom?" "Are you still coming today?" "I need to reschedule Thursday to Friday." Each one takes two minutes. Multiply that by every crew, every client, every week, and it's easily 8–10 hours a week of admin that never shows up on an invoice.</p>
 
-    <p>AI automation has gotten genuinely good at absorbing exactly this kind of work over the past year or two. Here's what's actually working for cleaning businesses right now, what's overkill, and what should still go through a real person.</p>
+    <p>AI automation has gotten genuinely good at absorbing exactly this kind of work over the past year or two. Here's what's actually working for cleaning businesses right now, what's overkill, and what should still go through a real person. If you're not sure your business has enough repetition to make this worth it yet, start with <a href="/blog/is-your-business-ready-for-ai-automation/">Is Your Business Ready for AI Automation?</a></p>
 
     <h2>Start with quoting and booking</h2>
-    <p>Cleaning is one of the easiest services to price with a simple formula — square footage, number of bedrooms and bathrooms, frequency (one-time, weekly, biweekly). That means it's also one of the easiest things for an AI agent to handle without any risk of misquoting a job.</p>
-    <p>An AI phone or web chat agent, built on <strong>Vapi</strong> or <strong>Retell AI</strong> for calls and wired to your booking calendar, can walk a new caller through the standard questions, quote a price range on the spot, and book the first available slot — all without anyone on your team picking up the phone. For businesses using <strong>Jobber</strong> or <strong>Housecall Pro</strong>, this connects directly into the same calendar your crews already work from.</p>
+    <p>Cleaning is one of the easiest services to price with a simple formula: square footage, number of bedrooms and bathrooms, frequency (one-time, weekly, biweekly). That means it's also one of the easiest things for an AI agent to handle without any risk of misquoting a job.</p>
+    <p>An AI phone or web chat agent, built on <strong>Vapi</strong> or <strong>Retell AI</strong> for calls and wired to your booking calendar, can walk a new caller through the standard questions, quote a price range on the spot, and book the first available slot, all without anyone on your team picking up the phone. For businesses using <strong>Jobber</strong> or <strong>Housecall Pro</strong>, this connects directly into the same calendar your crews already work from. This is the same fix we cover in <a href="/blog/cost-of-a-missed-call/">The Real Cost of a Missed Call</a>, just applied to a cleaning company's specific booking flow.</p>
 
     <h2>Automate the "are you still coming" loop</h2>
-    <p>Confirmation and reminder texts are the single highest-friction, lowest-value task in a cleaning business's day, and they're also the easiest to fully automate. A simple workflow in <strong>Zapier</strong>, <strong>Make</strong>, or <strong>n8n</strong> tied to your scheduling software can automatically text a client the day before ("See you tomorrow at 10am — reply RESCHEDULE if you need to move it") and handle basic replies without a human touching it.</p>
+    <p>Confirmation and reminder texts are the single highest-friction, lowest-value task in a cleaning business's day, and they're also the easiest to fully automate. A simple workflow in <strong>Zapier</strong>, <strong>Make</strong>, or <strong>n8n</strong> tied to your scheduling software can automatically text a client the day before ("See you tomorrow at 10am, reply RESCHEDULE if you need to move it") and handle basic replies without a human touching it.</p>
     <p>This alone tends to cut no-shows and last-minute cancellations noticeably, because clients get a reminder they can act on instead of forgetting until the doorbell rings.</p>
 
     <h2>Handle rescheduling without a phone tag marathon</h2>
-    <p>Reschedule requests are usually simple — move a job from one open slot to another — but they eat time because they turn into back-and-forth texts or voicemail tag. An AI text or voice agent connected to your live calendar can offer real open slots directly and confirm the change instantly, the same way it would book a new client.</p>
+    <p>Reschedule requests are usually simple, moving a job from one open slot to another, but they eat time because they turn into back-and-forth texts or voicemail tag. An AI text or voice agent connected to your live calendar can offer real open slots directly and confirm the change instantly, the same way it would book a new client.</p>
 
     <h2>Where to still use a real person</h2>
     <p>Not everything should be automated, and cleaning businesses are a good example of why. Keep a human in the loop for:</p>
     <ul>
       <li><strong>Complaints or quality issues.</strong> A client unhappy with a clean needs a person who can actually make it right, not a bot reading a script.</li>
       <li><strong>Custom or unusual jobs.</strong> Move-out deep cleans, post-construction cleanup, or anything outside your standard pricing menu still needs a human to scope it properly.</li>
-      <li><strong>New client trust-building.</strong> Some first-time clients — especially for recurring service where a stranger gets a house key — want to talk to an actual person before they commit. Let the AI handle the logistics after that first human conversation happens.</li>
+      <li><strong>New client trust-building.</strong> Some first-time clients, especially for recurring service where a stranger gets a house key, want to talk to an actual person before they commit. Let the AI handle the logistics after that first human conversation happens.</li>
     </ul>
 
     <div class="post-tools">
@@ -204,7 +178,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <h2>What this looks like put together</h2>
-    <p>The Raleigh cleaning businesses getting the most out of this aren't running some complex "AI transformation." They're running one connected system: a phone/chat agent for new quotes and booking, an automated reminder sequence for existing clients, and a rescheduling flow that avoids phone tag — all feeding the same calendar their crews already use. That's it. No new software to learn, no crew retraining, just fewer interruptions during the day.</p>
+    <p>The Raleigh cleaning businesses getting the most out of this aren't running some complex "AI transformation." They're running one connected system: a phone/chat agent for new quotes and booking, an automated reminder sequence for existing clients, and a rescheduling flow that avoids phone tag, all feeding the same calendar their crews already use. That's it. No new software to learn, no crew retraining, just fewer interruptions during the day. If reminder texts alone would help, that's the same idea covered in <a href="/blog/signs-your-follow-up-is-losing-you-money/">5 Signs Your Lead Follow-Up Is Losing You Money</a>.</p>
 
     <div class="post-cta">
       <h3>Run a cleaning business in the Triangle?</h3>
@@ -213,7 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <h2>The bottom line</h2>
-    <p>Cleaning businesses run on repetition — the same handful of questions, the same reminder texts, the same reschedule requests, week after week. That's exactly the kind of work AI automation handles well today, freeing up real hours for the parts of the business that actually need a person: the relationship, the quality, and the trust.</p>
+    <p>Cleaning businesses run on repetition: the same handful of questions, the same reminder texts, the same reschedule requests, week after week. That's exactly the kind of work AI automation handles well today, freeing up real hours for the parts of the business that actually need a person: the relationship, the quality, and the trust.</p>
 
     <hr class="post-divider" />
 
@@ -221,7 +195,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img src="/assets/connor-headshot.jpg" alt="Connor Bolin" width="56" height="56" loading="lazy" />
       <div>
         <h4>Connor Bolin</h4>
-        <p>Founder of UNVRS, building AI automation for small businesses across Raleigh, Cary, and Durham. Writes about what's actually working, not what's trending.</p>
+        <p>Founder of UNVRS, building AI automation for small businesses across Raleigh, Cary, and all of NC. Writes about what's actually working, not what's trending.</p>
       </div>
     </div>
 

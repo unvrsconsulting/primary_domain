@@ -2305,7 +2305,7 @@ button{ font-family: inherit; }
 }
 .post-card:hover{ border-color: var(--border-hover); background: var(--surface-hover); transform: translateY(-4px); }
 .post-card-thumb{ width:100%; aspect-ratio: 16/9; display:block; }
-.post-card-thumb svg{ width:100%; height:100%; display:block; }
+.post-card-thumb svg, .post-card-thumb img{ width:100%; height:100%; display:block; object-fit:cover; }
 .post-card-body{ padding: 24px 24px 26px; display:flex; flex-direction:column; flex:1; }
 .post-card-tag{
   display:inline-block; font-size: 11.5px; font-weight:600; text-transform: uppercase;
@@ -2325,7 +2325,7 @@ button{ font-family: inherit; }
 }
 @media (max-width: 860px){ .post-featured{ grid-template-columns: 1fr; padding: 22px; gap: 22px; } }
 .post-featured-thumb{ border-radius: 16px; overflow:hidden; aspect-ratio: 16/11; }
-.post-featured-thumb svg{ width:100%; height:100%; display:block; }
+.post-featured-thumb svg, .post-featured-thumb img{ width:100%; height:100%; display:block; object-fit:cover; }
 .post-featured h2{ font-size: 26px; line-height: 1.3; margin: 14px 0 12px; }
 .post-featured p{ color: var(--text-dim); font-size: 15px; line-height: 1.65; margin-bottom: 20px; }
 
@@ -2345,7 +2345,7 @@ button{ font-family: inherit; }
 
 .post-banner{ max-width: var(--container); margin: 0 auto 64px; padding: 0 32px; }
 .post-banner-art{ border-radius: 24px; overflow: hidden; border: 1px solid var(--border); background: var(--surface); }
-.post-banner-art svg{ width: 100%; height: 100%; display: block; }
+.post-banner-art svg, .post-banner-art img{ width: 100%; height: 100%; display: block; object-fit: cover; }
 
 .post-body{ max-width: 780px; margin: 0 auto; padding: 0 32px 40px; position: relative; z-index: 2; }
 .post-body h2{ font-size: 25px; line-height: 1.35; margin: 46px 0 16px; }
@@ -2370,6 +2370,9 @@ button{ font-family: inherit; }
 }
 .post-body a{ color: var(--violet); text-decoration: underline; text-decoration-color: rgba(139,124,255,0.4); text-underline-offset: 3px; }
 .post-body a:hover{ text-decoration-color: var(--violet); }
+.post-body a.btn{ text-decoration: none; }
+.post-body a.btn-primary{ color: #08080d; }
+.post-body a.btn-outline{ color: var(--text); }
 .post-body blockquote{
   margin: 28px 0; padding: 20px 24px; border-left: 2px solid var(--violet);
   background: var(--surface); border-radius: 0 14px 14px 0; font-size: 17px; color: var(--text); font-style: italic;
