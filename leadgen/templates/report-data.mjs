@@ -23,6 +23,30 @@ function projectRating(current) {
   ];
 }
 
+// Sums open hours across the week from DataForSEO's work_hours.timetable
+// (per-day array of {open:{hour,minute}, close:{...}}, or null if closed
+// that day). Returns { hoursPerWeek, closedDays } or null if no hours data
+// exists for this listing (common — plenty of GBP profiles never fill it in).
+function summarizeHours(workHours) {
+  const timetable = workHours?.timetable;
+  if (!timetable) return null;
+  const days = Object.values(timetable);
+  let hoursPerWeek = 0;
+  let closedDays = 0;
+  for (const day of days) {
+    if (!day || !day.length) {
+      closedDays++;
+      continue;
+    }
+    for (const span of day) {
+      const openMin = span.open.hour * 60 + span.open.minute;
+      const closeMin = span.close.hour * 60 + span.close.minute;
+      hoursPerWeek += Math.max(0, closeMin - openMin) / 60;
+    }
+  }
+  return { hoursPerWeek: Math.round(hoursPerWeek), closedDays };
+}
+
 // Real service pages that exist on the main site — ctaLink left blank
 // falls back to the booking link (script.js), which is also correct for
 // "Review & Reputation Management" since that one has no dedicated page.
@@ -39,7 +63,7 @@ const SERVICES = [
     key: 'receptionist',
     color: '#d97706',
     title: 'Virtual Receptionist',
-    pitch: 'Every call answered, every time — a 100% pickup rate so the phone ringing during a rush never costs you a customer again.',
+    pitch: 'Every call answered, every time: a 100% pickup rate so the phone ringing during a rush never costs you a customer again.',
     bullets: ['Answers every call, 24/7', 'Books appointments automatically', 'Routes urgent calls instantly'],
     ctaText: 'See it in action',
   },
@@ -47,7 +71,7 @@ const SERVICES = [
     key: 'teammate',
     color: '#6d54e0',
     title: 'Virtual Teammate',
-    pitch: 'A dedicated AI that owns one role — data entry, scheduling, order processing — and works it exactly like a member of your team.',
+    pitch: 'A dedicated AI that owns one role (data entry, scheduling, order processing) and works it exactly like a member of your team.',
     bullets: ['Owns one role, start to finish', 'Works your existing tools', 'Scales up for busy seasons, no hiring'],
     ctaText: 'See it in action',
   },
@@ -55,7 +79,7 @@ const SERVICES = [
     key: 'autobot',
     color: '#17b6d4',
     title: 'Auto-Bot',
-    pitch: 'A bot trained specifically on your business — your processes, your edge cases, your tone — built to handle complex, multi-step tasks correctly.',
+    pitch: 'A bot trained specifically on your business, including your processes, your edge cases, and your tone, built to handle complex, multi-step tasks correctly.',
     bullets: ['Trained on your exact processes', 'Handles multi-step tasks end-to-end', 'Gets sharper the more it runs'],
     ctaText: 'See it in action',
   },
@@ -63,7 +87,7 @@ const SERVICES = [
     key: 'leadfollowup',
     color: '#b34fd9',
     title: 'Lead Follow-Up Automation',
-    pitch: 'Speed wins deals — every new lead gets a response within minutes, then automatic follow-ups until they answer.',
+    pitch: 'Speed wins deals. Every new lead gets a response within minutes, then automatic follow-ups until they answer.',
     bullets: ['Responds to new leads in minutes', 'Never lets a lead go cold', 'Keeps following up until they reply'],
     ctaText: 'See it in action',
   },
@@ -79,7 +103,7 @@ const SERVICES = [
     key: 'invoicing',
     color: '#1ea672',
     title: 'Invoicing & Payment Follow-Up',
-    pitch: 'Invoices go out on time, and late payments get chased automatically — no more awkward collection calls.',
+    pitch: 'Invoices go out on time, and late payments get chased automatically. No more awkward collection calls.',
     bullets: ['Sends invoices automatically', 'Chases late payments for you', 'Tracks who’s paid and who hasn’t'],
     ctaText: 'See it in action',
   },
@@ -92,6 +116,7 @@ const SERVICES = [
 export function buildReportData(t, mainSiteUrl) {
   const biz = t.business;
   const cityGuess = (t.location || '').split(',')[0];
+  const bizHours = summarizeHours(biz.workHours);
 
   return {
     theme: { violet: '#6d54e0', magenta: '#b34fd9', cyan: '#17b6d4', logoUrl: '' },
@@ -111,6 +136,10 @@ export function buildReportData(t, mainSiteUrl) {
       claimed: !!biz.claimed,
       categories: [biz.category || t.keyword],
       website: biz.website || '',
+      // null when DataForSEO has no hours on file for this listing — the
+      // template must handle that (not every GBP profile fills this in).
+      hoursPerWeek: bizHours?.hoursPerWeek ?? null,
+      closedDays: bizHours?.closedDays ?? null,
       reportDate: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
     },
 
@@ -118,6 +147,14 @@ export function buildReportData(t, mainSiteUrl) {
       position: biz.rank,
       totalBusinesses: t.totalRanked,
       searchTerm: `${t.keyword} ${cityGuess}`.trim(),
+      // From find_keyword_visibility.mjs — same business (matched by
+      // place_id), checked against a couple of related searches in its
+      // trade. rank is null if it didn't show up in that keyword's top
+      // ~100 at all. Empty array if that script hasn't run yet.
+      otherKeywords: (biz.keywordVisibility || []).map((k) => ({
+        keyword: `${k.keyword} ${cityGuess}`.trim(),
+        rank: k.rank,
+      })),
     },
 
     metrics: {
@@ -125,6 +162,10 @@ export function buildReportData(t, mainSiteUrl) {
       avgRating: biz.rating ?? 0,
       reviewProjectionTimeline: projectReviews(biz.reviewsCount ?? 0),
       ratingProjectionTimeline: projectRating(biz.rating ?? 0),
+      // Real, measured history from find_review_history.mjs — [] until
+      // that script has run for this target (opt-in, extra DataForSEO
+      // cost), in which case the chart section just stays hidden.
+      reviewHistory: biz.reviewHistory || [],
     },
 
     // `rank` is the real, verified SERP position (1-5 for competitors,
@@ -132,7 +173,7 @@ export function buildReportData(t, mainSiteUrl) {
     // orders rows by this, not by review count, so the displayed rank
     // never contradicts `ranking.position` above.
     competitors: [
-      { name: biz.title, rank: biz.rank, reviewCount: biz.reviewsCount ?? 0, avgRating: biz.rating ?? 0, claimed: !!biz.claimed, website: biz.website || '', isClient: true },
+      { name: biz.title, rank: biz.rank, reviewCount: biz.reviewsCount ?? 0, avgRating: biz.rating ?? 0, claimed: !!biz.claimed, website: biz.website || '', hoursPerWeek: bizHours?.hoursPerWeek ?? null, isClient: true },
       ...t.competitors.map((c) => ({
         name: c.title,
         rank: c.rank,
@@ -140,6 +181,7 @@ export function buildReportData(t, mainSiteUrl) {
         avgRating: c.rating ?? 0,
         claimed: !!c.claimed,
         website: c.website || '',
+        hoursPerWeek: summarizeHours(c.workHours)?.hoursPerWeek ?? null,
       })),
     ],
 
@@ -149,7 +191,7 @@ export function buildReportData(t, mainSiteUrl) {
 
     cta: {
       heading: 'Stop losing jobs to the businesses above you.',
-      subheading: "Book a free 15-minute audit — we'll show you exactly which fix gets you the fastest win.",
+      subheading: "Book a free 30-minute consultation: we'll show you exactly which fix gets you the fastest win.",
       buttonText: 'Book My Free Growth Audit',
     },
   };
