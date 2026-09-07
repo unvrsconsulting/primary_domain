@@ -30,7 +30,7 @@ async function handleContact(request, env) {
       return json({ ok: true }, 200);
     }
 
-    if (!name || !email) {
+    if (!name || !email || !phone || !company || !website || !message) {
       return json({ ok: false, error: 'Missing required fields' }, 400);
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
