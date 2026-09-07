@@ -49,7 +49,7 @@
 
   // ---- Hero -----------------------------------------------------------------------
   set("hero-business-name", d.business.name);
-  document.title = `${d.business.name}: Local Visibility Report`;
+  document.title = `${d.business.name} — Local Visibility Report`;
 
   if (!d.business.claimed) {
     document.getElementById("unclaimed-banner").style.display = "flex";
@@ -94,8 +94,8 @@
     set("tg-profile", "Website Linked");
     set("tg-profile-sub", "▲ turn browsers into leads");
   } else {
-    set("tg-profile", "Optimized");
-    set("tg-profile-sub", "▲ claimed, linked, now defend it");
+    set("tg-profile", "Fully Optimized");
+    set("tg-profile-sub", "▲ claimed, linked — now defend it");
   }
 
   // ---- Shared trajectory-chart builder ------------------------------------------------
@@ -210,7 +210,7 @@
 
   set(
     "position-highlight-text",
-    `${claimedCount} of your ${otherCompetitors.length} top competitors have claimed, actively-managed profiles, meaning they're already set up to respond fast. Lead Follow-Up Automation makes sure you respond faster than all of them, every time.`
+    `${claimedCount} of your ${otherCompetitors.length} top competitors have claimed, actively-managed profiles — meaning they're already set up to respond fast. Lead Follow-Up Automation makes sure you respond faster than all of them, every time.`
   );
 
   // ---- Leaderboard ------------------------------------------------------------------
@@ -237,33 +237,6 @@
     board.appendChild(row);
   });
 
-  // ---- Keyword visibility (other searches in the same trade) ------------------------
-  // From find_keyword_visibility.mjs — empty until that script has run for
-  // this business, so the card just stays hidden rather than showing
-  // nothing useful.
-  if (d.ranking.otherKeywords && d.ranking.otherKeywords.length) {
-    document.getElementById("keyword-visibility-card").style.display = "block";
-    const kwRowsEl = document.getElementById("keyword-rows");
-    d.ranking.otherKeywords.forEach((k) => {
-      const row = document.createElement("div");
-      row.className = "kw-row";
-      const found = k.rank != null;
-      row.innerHTML = `
-        <span>${k.keyword}</span>
-        <span class="kw-badge ${found ? "good" : "bad"}">${found ? `#${k.rank}` : "Not in top 100"}</span>
-      `;
-      kwRowsEl.appendChild(row);
-    });
-  }
-
-  // Spreads n competitor dots across the totalSlots x-axis positions, evenly,
-  // in whatever order the caller already sorted them — so a low-to-high sort
-  // reads left-to-right on the chart instead of every dot stacking at "Today".
-  function spreadSlots(n, totalSlots) {
-    if (n <= 1) return [0];
-    return Array.from({ length: n }, (_, i) => Math.round((i * (totalSlots - 1)) / (n - 1)));
-  }
-
   // ---- Reviews & Rating section -------------------------------------------------------
   const reviewLabels = ["Today"].concat(d.metrics.reviewProjectionTimeline.map((t) => t.label));
   const reviewProjected = ensureSurpassByEnd(
@@ -273,16 +246,16 @@
     { buffer: Math.max(2, Math.round(topCompetitor.reviewCount * 0.03)), round: true }
   );
   const youReviews = [d.metrics.reviewCount].concat(reviewProjected);
-  // Each competitor plots as a single dot (null everywhere else so Chart.js
-  // with showLine: false draws a point, not a line), spread left-to-right
-  // across the timeline in ascending review-count order — not all stacked
-  // at "Today".
-  const reviewAscCompetitors = otherCompetitors.slice().sort((a, b) => a.reviewCount - b.reviewCount);
-  const reviewSlots = spreadSlots(reviewAscCompetitors.length, reviewLabels.length);
-  const competitorReviewSeries = reviewAscCompetitors.map((c, i) => ({
-    name: c.name,
-    data: reviewLabels.map((_, idx) => (idx === reviewSlots[i] ? c.reviewCount : null)),
-  }));
+  // Competitors plot as a single dot at "Today" (index 0) — null everywhere
+  // else so Chart.js (showLine: false) draws a point, not a line. Ordered
+  // ascending by review count so the legend/draw order reads low-to-high.
+  const competitorReviewSeries = otherCompetitors
+    .slice()
+    .sort((a, b) => a.reviewCount - b.reviewCount)
+    .map((c) => ({
+      name: c.name,
+      data: reviewLabels.map((_, i) => (i === 0 ? c.reviewCount : null)),
+    }));
   const revValues = youReviews.concat(competitorReviewSeries.flatMap((s) => s.data.filter((v) => v != null)));
   buildTrajectoryChart(
     "reviewsChart",
@@ -304,12 +277,13 @@
     { buffer: 0.05, cap: 5 }
   );
   const youRatings = [d.metrics.avgRating].concat(ratingProjected);
-  const ratingAscCompetitors = otherCompetitors.slice().sort((a, b) => a.avgRating - b.avgRating);
-  const ratingSlots = spreadSlots(ratingAscCompetitors.length, ratingLabels.length);
-  const competitorRatingSeries = ratingAscCompetitors.map((c, i) => ({
-    name: c.name,
-    data: ratingLabels.map((_, idx) => (idx === ratingSlots[i] ? c.avgRating : null)),
-  }));
+  const competitorRatingSeries = otherCompetitors
+    .slice()
+    .sort((a, b) => a.avgRating - b.avgRating)
+    .map((c) => ({
+      name: c.name,
+      data: ratingLabels.map((_, i) => (i === 0 ? c.avgRating : null)),
+    }));
   const ratingValues = youRatings.concat(competitorRatingSeries.flatMap((s) => s.data.filter((v) => v != null)));
   buildTrajectoryChart(
     "ratingChart",
@@ -330,66 +304,6 @@
     `You're ${reviewGap} reviews and ${ratingGap.toFixed(1)} stars behind the top-rated business near you. Review requests sent right after each job close both gaps automatically.`
   );
 
-  // ---- Review History section (real, measured — not a projection) --------------------
-  // Only rendered when find_review_history.mjs has actually run for this
-  // target; otherwise reviewHistory is [] and the whole section stays hidden
-  // rather than showing an empty chart.
-  if (d.metrics.reviewHistory && d.metrics.reviewHistory.length) {
-    document.getElementById("data-review-history").style.display = "";
-
-    const rh = d.metrics.reviewHistory;
-    const canvas = document.getElementById("reviewHistoryChart");
-    if (canvas && window.Chart) {
-      new Chart(canvas, {
-        type: "bar",
-        data: {
-          labels: rh.map((m) => m.label),
-          datasets: [{
-            label: "Reviews",
-            data: rh.map((m) => m.count),
-            backgroundColor: withAlpha(d.theme.magenta, 0.75),
-            hoverBackgroundColor: d.theme.magenta,
-            borderRadius: 6,
-            maxBarThickness: 42,
-          }],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          layout: { padding: { top: 14, bottom: 4 } },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              backgroundColor: "#14141f",
-              padding: 10,
-              cornerRadius: 10,
-              titleFont: { size: 11.5, weight: "700" },
-              bodyFont: { size: 11.5 },
-              callbacks: { label: (item) => `${item.parsed.y} review${item.parsed.y === 1 ? "" : "s"}` },
-            },
-          },
-          scales: {
-            x: { grid: { display: false }, border: { display: false }, ticks: { color: "#a5a5b5", font: { size: 11, weight: "600" } } },
-            y: { beginAtZero: true, ticks: { precision: 0, color: "#b0b0bd", font: { size: 10.5, weight: "500" } }, grid: { display: false }, border: { display: false } },
-          },
-        },
-      });
-    }
-
-    const totalInRange = rh.reduce((sum, m) => sum + m.count, 0);
-    set("review-history-stat-value", totalInRange);
-    set("review-history-stat-badge", `${rh[0].label} – ${rh[rh.length - 1].label}`);
-
-    const busiestMonth = rh.slice().sort((a, b) => b.count - a.count)[0];
-    const quietMonths = rh.filter((m) => m.count === 0).length;
-    set(
-      "review-history-highlight-text",
-      quietMonths > 0
-        ? `${quietMonths} of the last ${rh.length} months brought in zero reviews. Your busiest month (${busiestMonth.label}, ${busiestMonth.count}) shows the volume is there when you ask, it's just not happening consistently.`
-        : `Your busiest month was ${busiestMonth.label} with ${busiestMonth.count}. Automated review requests sent right after every job keep that pace steady instead of relying on remembering to ask.`
-    );
-  }
-
   // ---- Profile section ----------------------------------------------------------------
   const pill = document.getElementById("profile-claimed-pill");
   pill.textContent = d.business.claimed ? "Claimed" : "Unclaimed";
@@ -404,14 +318,6 @@
   set("profile-category", d.business.categories[0]);
   set("profile-address", d.business.address);
   set("profile-phone", d.business.phone);
-
-  // Not every GBP listing has hours on file — only show the row when
-  // DataForSEO actually returned a work_hours timetable for this one.
-  if (d.business.hoursPerWeek != null) {
-    document.getElementById("profile-hours-row").style.display = "flex";
-    const closedNote = d.business.closedDays ? ` (closed ${d.business.closedDays} day${d.business.closedDays === 1 ? "" : "s"}/week)` : "";
-    set("profile-hours", `${d.business.hoursPerWeek} hrs/week${closedNote}`);
-  }
 
   // Rank "You" against competitors by website presence (then rating) instead
   // of always pinning the client to the top of the list.
@@ -433,25 +339,14 @@
     document.getElementById("cat-bars-note").style.display = "block";
   }
 
-  let profileHighlight = !d.business.website
-    ? `Your Google profile has no website linked. Anyone who clicks through hits a dead end instead of your business. A Virtual Teammate keeps every profile field, including this one, filled in and current.`
-    : competitorsWithoutSite > 0
-    ? `Your Google profile links to a real website. ${competitorsWithoutSite} of your ${otherCompetitors.length} top competitors don't even have that. A Virtual Teammate keeps every profile field, including your site link, accurate and current.`
-    : `Every top competitor already has a website linked, and so do you. The basics are covered. A Virtual Teammate keeps it that way automatically, so a missed update never quietly costs you the edge.`;
-
-  // Not every listing has hours on file, so this only fires when there's a
-  // real, verified gap to point to — ties to Virtual Receptionist, which
-  // doesn't get its own dedicated CTA elsewhere on the page.
-  const competitorsWithHours = otherCompetitors.filter((c) => c.hoursPerWeek != null);
-  if (d.business.hoursPerWeek != null && competitorsWithHours.length) {
-    const bestHours = competitorsWithHours.reduce((a, b) => (b.hoursPerWeek > a.hoursPerWeek ? b : a));
-    const hoursGap = bestHours.hoursPerWeek - d.business.hoursPerWeek;
-    if (hoursGap > 0) {
-      profileHighlight += ` ${bestHours.name} is open ${hoursGap} more hour${hoursGap === 1 ? "" : "s"} a week than you are. A Virtual Receptionist answers around the clock either way, no extra hours needed.`;
-    }
-  }
-
-  set("profile-highlight-text", profileHighlight);
+  set(
+    "profile-highlight-text",
+    !d.business.website
+      ? `Your Google profile has no website linked — anyone who clicks through hits a dead end instead of your business. A Virtual Teammate keeps every profile field, including this one, filled in and current.`
+      : competitorsWithoutSite > 0
+      ? `Your Google profile links to a real website — ${competitorsWithoutSite} of your ${otherCompetitors.length} top competitors don't even have that. A Virtual Teammate keeps every profile field, including your site link, accurate and current.`
+      : `Every top competitor already has a website linked, and so do you — the basics are covered. A Virtual Teammate keeps it that way automatically, so a missed update never quietly costs you the edge.`
+  );
 
   // ---- Services grid (AI Automation) ---------------------------------------------------
   const servicesEl = document.getElementById("services");

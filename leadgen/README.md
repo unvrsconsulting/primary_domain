@@ -42,7 +42,6 @@ Step by step:
 
 ```bash
 node --env-file=leadgen/.env.local leadgen/scripts/find_targets.mjs
-node --env-file=leadgen/.env.local leadgen/scripts/find_review_history.mjs   # optional, extra cost — see step 1b
 node --env-file=leadgen/.env.local leadgen/scripts/generate_pages.mjs
 node --env-file=leadgen/.env.local leadgen/scripts/find_emails.mjs
 node --env-file=leadgen/.env.local leadgen/scripts/fill_email_drafts.mjs
@@ -68,20 +67,6 @@ straight from local files to Cloudflare.
    as their competitor set. Writes `leadgen/data/targets.json`. Costs
    money (see "Cost" below) — run this one on its own and check the
    output before chaining into `publish.mjs`.
-1b. **find_review_history.mjs** *(optional)* — pulls up to `REVIEW_DEPTH`
-   (default 100) individual Google reviews per target's business via
-   DataForSEO's Reviews endpoint, buckets them by month posted, and adds
-   `business.reviewHistory` to `targets.json`. This is a *real, measured*
-   month-by-month review count — different from the illustrative
-   week-2/4/6 growth projection `report-data.mjs` already shows, which is
-   the agency's own pitch, not data. When present, the report page shows an
-   extra "Review History" bar chart; when absent (skip this step
-   entirely), that section just stays hidden. Task-based endpoint (submit +
-   poll), so this is slow — a few seconds to ~1 minute per business, not
-   instant like `find_targets.mjs`. Costs extra: billed per task plus per
-   10 reviews returned (depth 100 ≈ 10 billing units per business). Skips
-   targets that already have `reviewHistory` so re-runs are incremental.
-
 2. **generate_pages.mjs** — renders `reports/<slug>/index.html` per
    target (noindex/nofollow, subdomain-wide `Disallow: /`, random slug
    suffix so it's not guessable) and a matching email draft in

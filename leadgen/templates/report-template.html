@@ -24,14 +24,14 @@
   </nav>
 
   <div id="unclaimed-banner" class="unclaimed-banner">
-    ⚠️ This Google Business Profile is unclaimed. Anyone could be managing it right now.
+    ⚠️ This Google Business Profile is unclaimed — anyone could be managing it right now.
   </div>
 
   <!-- ============================= HERO ============================= -->
   <header class="hero">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrapper">
-      <h1 id="hero-headline">Here's where <span class="grad-text" id="hero-business-name">-</span> stands right now</h1>
+      <h1 id="hero-headline">Here's where <span class="grad-text" id="hero-business-name">—</span> stands right now</h1>
 
       <div class="overview-card">
         <div class="overview-tile">
@@ -39,7 +39,7 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
           </div>
           <div class="overview-label">Local Position</div>
-          <div class="overview-value" id="ov-position">#-</div>
+          <div class="overview-value" id="ov-position">#—</div>
           <div class="overview-sub" id="ov-position-sub"></div>
         </div>
         <div class="overview-tile">
@@ -63,7 +63,7 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.4 8.4-7 9.9-3.6-1.5-7-4.9-7-9.9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="overview-label">Profile</div>
-          <div class="overview-value" id="ov-profile">-</div>
+          <div class="overview-value" id="ov-profile">—</div>
           <div class="overview-sub">Google Business listing</div>
         </div>
       </div>
@@ -77,7 +77,7 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
           </div>
           <div class="overview-label">Local Position</div>
-          <div class="overview-value" id="tg-position">#-</div>
+          <div class="overview-value" id="tg-position">#—</div>
           <div class="overview-sub" id="tg-position-sub"></div>
         </div>
         <div class="overview-tile">
@@ -101,7 +101,7 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.4 8.4-7 9.9-3.6-1.5-7-4.9-7-9.9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="overview-label">Profile</div>
-          <div class="overview-value" id="tg-profile">-</div>
+          <div class="overview-value" id="tg-profile">—</div>
           <div class="overview-sub" id="tg-profile-sub"></div>
         </div>
       </div>
@@ -113,16 +113,11 @@
     <div class="wrapper">
       <div class="section-head">
         <span class="tag">Your Position</span>
-        <h2>You're <span id="position-headline-num">#-</span> for "<span id="position-search-term"></span>"</h2>
+        <h2>You're <span id="position-headline-num">#—</span> for "<span id="position-search-term"></span>"</h2>
       </div>
 
       <div class="card position-card">
         <div id="leaderboard"></div>
-      </div>
-
-      <div class="card position-card" id="keyword-visibility-card" style="display:none; margin-top:16px;">
-        <div class="cat-compare-title">Other searches in your trade</div>
-        <div id="keyword-rows"></div>
       </div>
 
       <div class="cta-highlight" id="highlight-position" style="--hl: #b34fd9;">
@@ -188,43 +183,6 @@
     </div>
   </section>
 
-  <!-- ============================= REVIEW HISTORY ============================= -->
-  <!-- Hidden by script.js when metrics.reviewHistory is empty (i.e.
-       find_review_history.mjs hasn't run for this target) -->
-  <section class="section section-alt" id="data-review-history" style="display:none;">
-    <div class="wrapper">
-      <div class="section-head">
-        <span class="tag">Review History</span>
-        <h2>How you actually got your reviews</h2>
-      </div>
-
-      <div class="card chart-card">
-        <div class="chart-stat-head">
-          <div>
-            <div class="chart-stat-label">
-              <span class="chart-card-icon" style="--cc: var(--magenta);"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16v10.5H9l-4 4V5.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-              Reviews Received Per Month
-            </div>
-            <div class="chart-stat-value" id="review-history-stat-value">0</div>
-          </div>
-          <div class="chart-stat-badge" id="review-history-stat-badge" style="--cc: var(--magenta);"></div>
-        </div>
-        <div class="chart-wrap"><canvas id="reviewHistoryChart"></canvas></div>
-      </div>
-
-      <div class="cta-highlight" id="highlight-review-history" style="--hl: var(--magenta);">
-        <div class="cta-highlight-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16v10.5H9l-4 4V5.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="cta-highlight-body">
-          <div class="cta-highlight-label">Why this matters</div>
-          <div class="cta-highlight-text" id="review-history-highlight-text"></div>
-        </div>
-        <a class="btn btn-primary btn-sm" href="#service-reviews">See Review Management →</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ============================= PROFILE ============================= -->
   <section class="section" id="data-profile">
     <div class="wrapper">
@@ -236,14 +194,13 @@
       <div class="profile-grid">
         <div class="card profile-card">
           <div class="profile-status-row">
-            <span class="status-pill" id="profile-claimed-pill">-</span>
+            <span class="status-pill" id="profile-claimed-pill">—</span>
             <span id="profile-claimed-note" style="font-size:13px; color:var(--text-faint);"></span>
           </div>
           <div class="profile-fact"><span>Business name</span><span id="profile-name"></span></div>
           <div class="profile-fact"><span>Primary category</span><span id="profile-category"></span></div>
           <div class="profile-fact"><span>Address</span><span id="profile-address"></span></div>
           <div class="profile-fact"><span>Phone</span><span id="profile-phone"></span></div>
-          <div class="profile-fact" id="profile-hours-row" style="display:none;"><span>Hours</span><span id="profile-hours"></span></div>
         </div>
 
         <div class="card profile-card">
@@ -272,7 +229,7 @@
       <div class="section-head">
         <span class="tag">AI Automation</span>
         <h2>AI solutions that pay for themselves</h2>
-        <p>Missed calls, slow follow-ups, and manual busywork cost businesses like yours real customers. These are the systems that close the gaps above, fastest wins first.</p>
+        <p>Missed calls, slow follow-ups, and manual busywork cost businesses like yours real customers. These are the systems that close the gaps above — fastest wins first.</p>
       </div>
       <div class="services-grid" id="services"></div>
     </div>
