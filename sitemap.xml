@@ -76,9 +76,41 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://universeaiconsulting.com/industries/auto-repair-shops/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/pest-control/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/landscaping-lawn-care/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/industries/veterinary-clinics/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://universeaiconsulting.com/blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/blog/ai-for-real-estate-teams-raleigh/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/blog/ai-for-dental-practices-raleigh/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://universeaiconsulting.com/blog/ai-for-hvac-plumbing-companies-raleigh/</loc>
@@ -115,5 +147,15 @@
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/privacy-policy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://universeaiconsulting.com/terms-conditions/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

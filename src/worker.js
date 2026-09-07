@@ -2,6 +2,11 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    if (url.protocol === 'http:') {
+      url.protocol = 'https:';
+      return Response.redirect(url.toString(), 301);
+    }
+
     if (url.pathname === '/api/contact' && request.method === 'POST') {
       return handleContact(request, env);
     }
@@ -17,10 +22,19 @@ export default {
 async function handleContact(request, env) {
   try {
     const data = await request.json();
-    const { name, email, phone, company, website, message } = data;
+    const { name, email, phone, company, website, message, _hp } = data;
+
+    // Honeypot: real users never fill this hidden field, bots often do.
+    // Pretend success without sending mail so the bot doesn't learn.
+    if (_hp) {
+      return json({ ok: true }, 200);
+    }
 
     if (!name || !email) {
       return json({ ok: false, error: 'Missing required fields' }, 400);
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return json({ ok: false, error: 'Invalid email address' }, 400);
     }
 
     const bodyText = [
