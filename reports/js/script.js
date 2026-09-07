@@ -330,66 +330,6 @@
     `You're ${reviewGap} reviews and ${ratingGap.toFixed(1)} stars behind the top-rated business near you. Review requests sent right after each job close both gaps automatically.`
   );
 
-  // ---- Review History section (real, measured — not a projection) --------------------
-  // Only rendered when find_review_history.mjs has actually run for this
-  // target; otherwise reviewHistory is [] and the whole section stays hidden
-  // rather than showing an empty chart.
-  if (d.metrics.reviewHistory && d.metrics.reviewHistory.length) {
-    document.getElementById("data-review-history").style.display = "";
-
-    const rh = d.metrics.reviewHistory;
-    const canvas = document.getElementById("reviewHistoryChart");
-    if (canvas && window.Chart) {
-      new Chart(canvas, {
-        type: "bar",
-        data: {
-          labels: rh.map((m) => m.label),
-          datasets: [{
-            label: "Reviews",
-            data: rh.map((m) => m.count),
-            backgroundColor: withAlpha(d.theme.magenta, 0.75),
-            hoverBackgroundColor: d.theme.magenta,
-            borderRadius: 6,
-            maxBarThickness: 42,
-          }],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          layout: { padding: { top: 14, bottom: 4 } },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              backgroundColor: "#14141f",
-              padding: 10,
-              cornerRadius: 10,
-              titleFont: { size: 11.5, weight: "700" },
-              bodyFont: { size: 11.5 },
-              callbacks: { label: (item) => `${item.parsed.y} review${item.parsed.y === 1 ? "" : "s"}` },
-            },
-          },
-          scales: {
-            x: { grid: { display: false }, border: { display: false }, ticks: { color: "#a5a5b5", font: { size: 11, weight: "600" } } },
-            y: { beginAtZero: true, ticks: { precision: 0, color: "#b0b0bd", font: { size: 10.5, weight: "500" } }, grid: { display: false }, border: { display: false } },
-          },
-        },
-      });
-    }
-
-    const totalInRange = rh.reduce((sum, m) => sum + m.count, 0);
-    set("review-history-stat-value", totalInRange);
-    set("review-history-stat-badge", `${rh[0].label} – ${rh[rh.length - 1].label}`);
-
-    const busiestMonth = rh.slice().sort((a, b) => b.count - a.count)[0];
-    const quietMonths = rh.filter((m) => m.count === 0).length;
-    set(
-      "review-history-highlight-text",
-      quietMonths > 0
-        ? `${quietMonths} of the last ${rh.length} months brought in zero reviews. Your busiest month (${busiestMonth.label}, ${busiestMonth.count}) shows the volume is there when you ask, it's just not happening consistently.`
-        : `Your busiest month was ${busiestMonth.label} with ${busiestMonth.count}. Automated review requests sent right after every job keep that pace steady instead of relying on remembering to ask.`
-    );
-  }
-
   // ---- Profile section ----------------------------------------------------------------
   const pill = document.getElementById("profile-claimed-pill");
   pill.textContent = d.business.claimed ? "Claimed" : "Unclaimed";

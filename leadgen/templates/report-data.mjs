@@ -162,10 +162,6 @@ export function buildReportData(t, mainSiteUrl) {
       avgRating: biz.rating ?? 0,
       reviewProjectionTimeline: projectReviews(biz.reviewsCount ?? 0),
       ratingProjectionTimeline: projectRating(biz.rating ?? 0),
-      // Real, measured history from find_review_history.mjs — [] until
-      // that script has run for this target (opt-in, extra DataForSEO
-      // cost), in which case the chart section just stays hidden.
-      reviewHistory: biz.reviewHistory || [],
     },
 
     // `rank` is the real, verified SERP position (1-5 for competitors,
