@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PMZB2J5H');</script>
+<!-- End Google Tag Manager -->
+
+<title>How to Write an AI Receptionist Script That Doesn't Sound Robotic | UNVRS</title>
+<meta name="description" content="Most 'this AI sounds robotic' complaints are a script problem, not a technology problem. Here's how we actually write call scripts that pass as a real employee." />
+<meta name="keywords" content="AI receptionist script, AI voice agent script writing, natural sounding AI receptionist, AI phone script best practices, how to train an AI receptionist" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://universeaiconsulting.com/blog/how-to-write-an-ai-receptionist-script/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="UNVRS" />
+<meta property="og:title" content="How to Write an AI Receptionist Script That Doesn't Sound Robotic" />
+<meta property="og:description" content="Most 'this AI sounds robotic' complaints are a script problem, not a technology problem. Here's how we actually write call scripts that pass as a real employee." />
+<meta property="og:url" content="https://universeaiconsulting.com/blog/how-to-write-an-ai-receptionist-script/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://universeaiconsulting.com/assets/blog/script-writing.jpg" />
+<meta property="article:published_time" content="2026-09-18T09:00:00-04:00" />
+<meta property="article:author" content="Connor Bolin" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to Write an AI Receptionist Script That Doesn't Sound Robotic" />
+<meta name="twitter:description" content="Most 'this AI sounds robotic' complaints are a script problem, not a technology problem. Here's how we actually write call scripts that pass as a real employee." />
+<meta name="twitter:image" content="https://universeaiconsulting.com/assets/blog/script-writing.jpg" />
+
+<meta name="geo.region" content="US-NC" />
+<meta name="geo.placename" content="Raleigh" />
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/css/main.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Write an AI Receptionist Script That Doesn't Sound Robotic",
+  "description": "Most 'this AI sounds robotic' complaints are a script problem, not a technology problem. Here's how we actually write call scripts that pass as a real employee.",
+  "image": "https://universeaiconsulting.com/assets/blog/script-writing.jpg",
+  "author": { "@type": "Person", "name": "Connor Bolin", "url": "https://universeaiconsulting.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UNVRS",
+    "logo": { "@type": "ImageObject", "url": "https://universeaiconsulting.com/assets/favicon.svg" }
+  },
+  "datePublished": "2026-09-18T09:00:00-04:00",
+  "dateModified": "2026-09-18T09:00:00-04:00",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://universeaiconsulting.com/blog/how-to-write-an-ai-receptionist-script/" },
+  "articleSection": "Build Notes",
+  "keywords": "AI receptionist script, AI voice agent script writing, natural sounding AI receptionist, AI phone script best practices, how to train an AI receptionist"
+}
+</script>
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMZB2J5H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="cursor-core" id="cursorCore"></div>
+
+<canvas id="bgCanvas"></canvas>
+<div class="noise-overlay"></div>
+<div class="grid-overlay"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="3.2" fill="url(#navGrad)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#navGrad)" stroke-width="1.4" fill="none" opacity="0.85"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#navGrad)" stroke-width="1.4" fill="none" opacity="0.5" transform="rotate(60 20 20)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#navGrad)" stroke-width="1.4" fill="none" opacity="0.5" transform="rotate(120 20 20)"/>
+        <defs>
+          <linearGradient id="navGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8B7CFF"/>
+            <stop offset="0.5" stop-color="#C875FF"/>
+            <stop offset="1" stop-color="#4FE3FF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>UNVRS</span>
+      <span class="nav-tagline">AI Consulting</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="/#local-business" class="nav-link">Local Business</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger nav-link" type="button" aria-haspopup="true">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="/services/ai-virtual-receptionist/">AI Virtual Receptionist</a>
+          <a href="/services/lead-follow-up-automation/">Lead Follow-Up Automation</a>
+          <a href="/services/ai-virtual-teammate/">AI Virtual Teammate</a>
+          <a href="/services/ai-chatbot-automation/">AI Chatbot / Auto-Bot</a>
+          <a href="/services/review-reputation-management/">Review &amp; Reputation Management</a>
+          <a href="/services/invoicing-payment-automation/">Invoicing &amp; Payment Follow-Up</a>
+          <a href="/services/" class="nav-dropdown-menu-all">View all services &rarr;</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger nav-link" type="button" aria-haspopup="true">Industries <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="/industries/home-cleaning/">Home Cleaning</a>
+          <a href="/industries/hvac-plumbing/">HVAC &amp; Plumbing</a>
+          <a href="/industries/dental-practices/">Dental Practices</a>
+          <a href="/industries/real-estate/">Real Estate</a>
+          <a href="/industries/salons-med-spas/">Salons &amp; Med Spas</a>
+          <a href="/industries/restaurants/">Restaurants</a>
+          <a href="/industries/auto-repair-shops/">Auto Repair Shops</a>
+          <a href="/industries/pest-control/">Pest Control</a>
+          <a href="/industries/landscaping-lawn-care/">Landscaping &amp; Lawn Care</a>
+          <a href="/industries/veterinary-clinics/">Veterinary Clinics</a>
+          <a href="/industries/" class="nav-dropdown-menu-all">View all industries &rarr;</a>
+        </div>
+      </div>
+      <a href="/#process" class="nav-link">Process</a>
+      <a href="/#work" class="nav-link">Case Study</a>
+      <a href="/#pricing" class="nav-link">Pricing</a>
+      <a href="/#about" class="nav-link">About</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="/#contact" class="btn btn-small btn-ghost magnetic">Let's Talk</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="/#local-business" class="nav-mobile-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Local Business</a>
+    <div class="nav-mobile-group">
+      <button class="nav-mobile-group-trigger" type="button" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a5 5 0 0 1-6.6 6.6L5.4 21.5a2 2 0 0 1-2.8-2.8L11.3 9.9a5 5 0 0 1 6.6-6.6l-3.1 3.1z"/></svg>
+        Services
+        <svg class="nav-mobile-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-mobile-submenu">
+        <a href="/services/ai-virtual-receptionist/" class="nav-mobile-sublink">AI Virtual Receptionist</a>
+        <a href="/services/lead-follow-up-automation/" class="nav-mobile-sublink">Lead Follow-Up Automation</a>
+        <a href="/services/ai-virtual-teammate/" class="nav-mobile-sublink">AI Virtual Teammate</a>
+        <a href="/services/ai-chatbot-automation/" class="nav-mobile-sublink">AI Chatbot / Auto-Bot</a>
+        <a href="/services/review-reputation-management/" class="nav-mobile-sublink">Review &amp; Reputation Management</a>
+        <a href="/services/invoicing-payment-automation/" class="nav-mobile-sublink">Invoicing &amp; Payment Follow-Up</a>
+        <a href="/services/" class="nav-mobile-sublink">View all services &rarr;</a>
+      </div>
+    </div>
+    <div class="nav-mobile-group">
+      <button class="nav-mobile-group-trigger" type="button" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+        Industries
+        <svg class="nav-mobile-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-mobile-submenu">
+        <a href="/industries/home-cleaning/" class="nav-mobile-sublink">Home Cleaning</a>
+        <a href="/industries/hvac-plumbing/" class="nav-mobile-sublink">HVAC &amp; Plumbing</a>
+        <a href="/industries/dental-practices/" class="nav-mobile-sublink">Dental Practices</a>
+        <a href="/industries/real-estate/" class="nav-mobile-sublink">Real Estate</a>
+        <a href="/industries/salons-med-spas/" class="nav-mobile-sublink">Salons &amp; Med Spas</a>
+        <a href="/industries/restaurants/" class="nav-mobile-sublink">Restaurants</a>
+        <a href="/industries/auto-repair-shops/" class="nav-mobile-sublink">Auto Repair Shops</a>
+        <a href="/industries/pest-control/" class="nav-mobile-sublink">Pest Control</a>
+        <a href="/industries/landscaping-lawn-care/" class="nav-mobile-sublink">Landscaping &amp; Lawn Care</a>
+        <a href="/industries/veterinary-clinics/" class="nav-mobile-sublink">Veterinary Clinics</a>
+        <a href="/industries/" class="nav-mobile-sublink">View all industries &rarr;</a>
+      </div>
+    </div>
+    <a href="/#process" class="nav-mobile-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>Process</a>
+    <a href="/#work" class="nav-mobile-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M8 17V11"/><path d="M13 17V7"/><path d="M18 17v-4"/></svg>Case Study</a>
+    <a href="/#pricing" class="nav-mobile-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 12 4.83A2 2 0 0 0 10.5 4H4a1 1 0 0 0-1 1v6.5a2 2 0 0 0 .59 1.41l8.5 8.5a2 2 0 0 0 2.82 0l6-6a2 2 0 0 0 0-2.82z"/><circle cx="7.5" cy="7.5" r="1.2" fill="currentColor" stroke="none"/></svg>Pricing</a>
+    <a href="/#about" class="nav-mobile-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>About</a>
+    <a href="/#contact" class="nav-mobile-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Contact</a>
+    <a href="/blog/" class="nav-mobile-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>Blog</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="post-hero">
+    <div class="post-hero-inner">
+      <div class="breadcrumb reveal"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span>How to Write an AI Receptionist Script That Doesn't Sound Robotic</div>
+      <span class="post-category reveal">Build Notes</span>
+      <h1 class="post-title reveal">How to Write an AI Receptionist Script That Doesn't Sound Robotic</h1>
+      <div class="post-meta reveal">
+        <span class="post-meta-author"><img src="/assets/connor-headshot.jpg" alt="Connor Bolin" width="34" height="34" loading="lazy" />Connor Bolin</span>
+        <span class="post-meta-dot">·</span>
+        <span>Sep 18, 2026</span>
+        <span class="post-meta-dot">·</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-banner reveal">
+    <div class="post-banner-art">
+      <img src="/assets/blog/ai-basics-compare.jpg" alt="Flat illustration of a phone headset, a chat bubble, and a person badge icon side by side" width="900" height="900" loading="eager" />
+    </div>
+  </div>
+
+  <article class="post-body">
+    <p>"It sounds robotic" is almost never a complaint about the voice technology itself. Modern voice models sound convincingly human already. It's almost always a complaint about the script underneath it, stiff phrasing, generic filler, and no plan for the moments that don't go perfectly. Here's how we actually write these.</p>
+
+    <h2>Start from how your best employee talks, not how a form reads</h2>
+    <p>Most first-draft scripts read like a website FAQ page read aloud: complete sentences, formal phrasing, zero contractions. Nobody talks that way on the phone. We start by listening to (or asking about) how the best person on the team actually answers calls, the specific phrases they use, how they greet someone, how they handle a rushed caller, and write from that instead of from marketing copy. "We can't" instead of "we are unable to." "Let me check" instead of "please allow me a moment to verify."</p>
+
+    <h2>Give it real information instead of safe generic answers</h2>
+    <p>A script that says "pricing varies depending on your needs" every time sounds robotic because it's dodging the question, the same way a bad human employee would. The fix is giving the AI real pricing ranges, real hours, real service area boundaries, and real answers to the ten questions that come up constantly, so it can actually answer instead of stalling. Vague answers are what make callers suspicious they're talking to a bot, specific ones are what make them stop caring.</p>
+
+    <h2>Plan for "I don't know" on purpose</h2>
+    <p>Every script eventually hits a question it shouldn't answer: a complaint, a price negotiation, something outside the business entirely. The worst scripts either guess or loop back to the same line twice. A good one has a specific, natural handoff built in: "That's something I want to get right, let me have someone call you back within the hour," then actually triggers that follow-up. Planning for the edge case up front is what separates a system that degrades gracefully from one that falls apart the first time a caller goes off-script.</p>
+
+    <h2>Keep every turn short, one question at a time</h2>
+    <p>Reading a caller a list of four options in one breath is how phone trees have sounded robotic for twenty years. A natural conversation asks one thing, waits, listens, then asks the next thing based on the answer. If a script has more than one question in a single line, it's a form being read aloud, not a conversation.</p>
+
+    <div class="post-tools">
+      <span class="post-tool-pill">Vapi</span>
+      <span class="post-tool-pill">Retell AI</span>
+      <span class="post-tool-pill">Bland AI</span>
+      <span class="post-tool-pill">Twilio</span>
+    </div>
+
+    <h2>Test it like a caller, not like a script reviewer</h2>
+    <p>Reading a script on paper and calling the live number are two different experiences. We call every build repeatedly before it goes live: interrupting mid-sentence, mumbling, asking something unrelated, going quiet, giving an address with background noise. Almost every awkward moment a script has shows up in the first ten real test calls, and it's far cheaper to fix before a real customer hits it than after.</p>
+
+    <div class="post-cta">
+      <h3>Curious what a real call with your script sounds like?</h3>
+      <p>We'll build a test version around your actual business and let you call it yourself before anything goes live.</p>
+      <a href="/#contact" class="btn btn-primary magnetic">Hear it for yourself</a>
+    </div>
+
+    <h2>The bottom line</h2>
+    <p>The technology behind AI receptionists has been good enough to sound human for a while now. What separates a system that feels robotic from one that doesn't is almost entirely the writing and testing behind it, not the underlying model. See our <a href="/services/ai-virtual-receptionist/">AI Virtual Receptionist</a> page for how this fits into a full build, and <a href="/blog/cost-of-a-missed-call/">The Real Cost of a Missed Call</a> for why getting this right matters so much in the first place.</p>
+
+    <hr class="post-divider" />
+
+    <div class="post-author-box">
+      <img src="/assets/connor-headshot.jpg" alt="Connor Bolin" width="56" height="56" loading="lazy" />
+      <div>
+        <h4>Connor Bolin</h4>
+        <p>Founder of UNVRS, building AI automation for small businesses across Raleigh, Cary, and all of NC. Writes about what's actually working, not what's trending.</p>
+      </div>
+    </div>
+
+    <div class="post-share">
+      <span>Share this post</span>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://universeaiconsulting.com/blog/how-to-write-an-ai-receptionist-script/" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a href="https://twitter.com/intent/tweet?url=https://universeaiconsulting.com/blog/how-to-write-an-ai-receptionist-script/&text=How%20to%20Write%20an%20AI%20Receptionist%20Script%20That%20Doesn%27t%20Sound%20Robotic" target="_blank" rel="noopener" aria-label="Share on X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.68L23.3 22h-6.9l-5.4-7.06L4.8 22H1.7l8.1-9.26L1 2h7.1l4.9 6.45L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg></a>
+    </div>
+  </article>
+
+</main>
+
+<section class="related-posts">
+  <div class="related-posts-inner">
+    <h3 class="reveal">Keep reading</h3>
+    <div class="post-grid">
+      <a href="/blog/cost-of-a-missed-call/" class="post-card reveal">
+        <span class="post-card-body">
+          <span class="post-card-tag">Missed Revenue</span>
+          <h3>The Real Cost of a Missed Call</h3>
+          <span class="post-card-read">Read the post <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+      <a href="/blog/how-much-does-an-ai-receptionist-cost/" class="post-card reveal" data-delay="0.1">
+        <span class="post-card-body">
+          <span class="post-card-tag">Pricing</span>
+          <h3>How Much Does an AI Receptionist Cost?</h3>
+          <span class="post-card-read">Read the post <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+      <a href="/blog/questions-to-ask-before-hiring-an-ai-automation-company/" class="post-card reveal" data-delay="0.2">
+        <span class="post-card-body">
+          <span class="post-card-tag">Buyer's Guide</span>
+          <h3>5 Questions to Ask Before Hiring an AI Automation Company</h3>
+          <span class="post-card-read">Read the post <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="/" class="nav-logo footer-logo">
+      <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="3.2" fill="url(#footGrad)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#footGrad)" stroke-width="1.4" fill="none" opacity="0.85"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#footGrad)" stroke-width="1.4" fill="none" opacity="0.5" transform="rotate(60 20 20)"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" stroke="url(#footGrad)" stroke-width="1.4" fill="none" opacity="0.5" transform="rotate(120 20 20)"/>
+        <defs>
+          <linearGradient id="footGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8B7CFF"/>
+            <stop offset="0.5" stop-color="#C875FF"/>
+            <stop offset="1" stop-color="#4FE3FF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>UNVRS</span>
+    </a>
+    <p class="footer-tag">AI automation for small businesses in Raleigh, NC.</p>
+    <div class="footer-links">
+      <a href="/#local-business">Local Business</a>
+      <a href="/services/">Services</a>
+      <a href="/industries/">Industries</a>
+      <a href="/#process">Process</a>
+      <a href="/#work">Case Study</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="/blog/">Blog</a>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/terms-conditions/">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 UNVRS. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/blog.js"></script>
+</body>
+</html>
