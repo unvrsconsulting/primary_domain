@@ -1,0 +1,41 @@
+# UNVRS
+
+> UNVRS is an AI automation studio in Raleigh, NC, run by founder Connor Bolin. We build AI receptionists, lead follow-up, review management, invoicing follow-up, chatbots, and virtual teammates for small businesses across the Triangle (Raleigh, Cary, Durham, Chapel Hill, Apex, Morrisville, Wake Forest, Garner, Holly Springs, Knightdale, and Fuquay-Varina).
+
+Plans start at $199 a month for a Virtual Receptionist, $499 a month adds Lead Follow-Up Automation and Review & Reputation Management, and the complete system starts at $799 a month. Final pricing depends on call volume and business needs. Every plan can be live in under two weeks. Our systems handle scheduling, reminders, follow-up, and administrative communication only; clinical, diagnostic, technical, and licensed-work decisions always stay with the client's own team.
+
+## Services
+
+- [AI Virtual Receptionist](https://universeaiconsulting.com/services/ai-virtual-receptionist/): Answers every call in one or two rings, books appointments, and hands off to a real person when needed.
+- [Lead Follow-Up Automation](https://universeaiconsulting.com/services/lead-follow-up-automation/): Texts and emails new leads within seconds and keeps following up until they book or opt out.
+- [AI Virtual Teammate](https://universeaiconsulting.com/services/ai-virtual-teammate/): An AI that owns one recurring back-office role end to end.
+- [AI Chatbot / Auto-Bot](https://universeaiconsulting.com/services/ai-chatbot-automation/): A website chatbot trained on the client's own business, forms, and documents.
+- [Review & Reputation Management](https://universeaiconsulting.com/services/review-reputation-management/): Automatic review requests and low-rating alerts.
+- [Invoicing & Payment Follow-Up](https://universeaiconsulting.com/services/invoicing-payment-automation/): Fixed, friendly reminder timelines from invoice sent to paid.
+
+## Industries
+
+- [Home Cleaning](https://universeaiconsulting.com/industries/home-cleaning/)
+- [HVAC & Plumbing](https://universeaiconsulting.com/industries/hvac-plumbing/)
+- [Dental Practices](https://universeaiconsulting.com/industries/dental-practices/)
+- [Real Estate](https://universeaiconsulting.com/industries/real-estate/)
+- [Salons & Med Spas](https://universeaiconsulting.com/industries/salons-med-spas/)
+- [Restaurants](https://universeaiconsulting.com/industries/restaurants/)
+- [Auto Repair Shops](https://universeaiconsulting.com/industries/auto-repair-shops/)
+- [Pest Control](https://universeaiconsulting.com/industries/pest-control/)
+- [Landscaping & Lawn Care](https://universeaiconsulting.com/industries/landscaping-lawn-care/)
+- [Veterinary Clinics](https://universeaiconsulting.com/industries/veterinary-clinics/)
+
+## Guides
+
+- [The Real Cost of a Missed Call](https://universeaiconsulting.com/blog/cost-of-a-missed-call/)
+- [The Real Cost of a No-Show](https://universeaiconsulting.com/blog/cost-of-a-no-show/)
+- [How Much Does an AI Receptionist Cost?](https://universeaiconsulting.com/blog/how-much-does-an-ai-receptionist-cost/)
+- [AI Receptionist vs. AI Chatbot vs. AI Virtual Teammate](https://universeaiconsulting.com/blog/ai-receptionist-vs-chatbot-vs-virtual-teammate/)
+- [5 Questions to Ask Before Hiring an AI Automation Company](https://universeaiconsulting.com/blog/questions-to-ask-before-hiring-an-ai-automation-company/)
+- [Is Your Business Ready for AI Automation?](https://universeaiconsulting.com/blog/is-your-business-ready-for-ai-automation/)
+- [All blog posts](https://universeaiconsulting.com/blog/)
+
+## Contact
+
+- [Talk to us](https://universeaiconsulting.com/#contact)
